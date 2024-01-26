@@ -1,13 +1,10 @@
 :root {
-    --primary-color: #191919;
-    --sidebar-main-color: #FFFFFF;
-    --sidebar-primary: #353E47;
-    --sidebar-primary-hover: #353E47;
+    --tooltip-collapsed: white;
+    --lines-and-tooltip: rgb(11, 4, 12);
+    --sidebar-hover: #353E47;
     --sidebar-background: rgb(11, 4, 12);
-    --background: #F1F3FF;
-    --text-link: #FFFFFF;
-    --headline: #CBD1D8;
-    --expand-button: #353E47;
+    --sidebar-text-color: #FFFFFF;
+    --expand-button: white;
   }
   
   body {
@@ -20,7 +17,7 @@
     height: 100vh;
     width: 250px;
     display: flex;
-    color: var(--sidebar-main-color);
+    color: var(--lines-and-tooltip);
     flex-direction: column;
     justify-content: center;
     background-color: var(--sidebar-background);
@@ -66,7 +63,7 @@
   .logo__wrapper {
     display: flex;
     align-items: center;
-    color: var(--text-link);
+    color: var(--sidebar-text-color);
     font-weight: 700;
     text-decoration: none;
     font-size: 24px;
@@ -108,7 +105,7 @@
   }
   
   .sidebar-links li {
-    color: var(--text-link);
+    color: var(--sidebar-text-color);
     margin: 10px 0;
   }
   
@@ -119,11 +116,11 @@
   }
   
   .sidebar-links li a:hover {
-    background-color: var(--sidebar-primary-hover);
+    background-color: var(--sidebar-hover);
   }
   
   .sidebar-links li a {
-    color: var(--text-link);
+    color: var(--sidebar-text-color);
     flex-grow: 1;
     padding: 0 16px;
     font-size: 1.25rem;
@@ -144,13 +141,13 @@
   }
   
   .sidebar-links .active:hover {
-    background-color: var(--sidebar-primary-hover);
+    background-color: var(--sidebar-hover);
   }
   
   .sidebar-links .active {
     text-decoration: none;
-    background-color: var(--sidebar-primary-hover);
-    color: var(--text-link);
+    background-color: var(--sidebar-hover);
+    color: var(--sidebar-text-color);
   }
   
   
@@ -168,13 +165,13 @@
     margin-top: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: transparent var(--primary-color) transparent transparent;
+    border-color: transparent var(--tooltip-collapsed) transparent transparent;
   }
   
   .tooltip .tooltip__content {
     visibility: hidden;
-    background-color: var(--primary-color);
-    color: var(--sidebar-main-color);
+    background-color: var(--tooltip-collapsed);
+    color: var(--lines-and-tooltip);
     text-align: center;
     border-radius: 6px;
     padding: 6px 12px;
@@ -206,10 +203,11 @@
   body.collapsed .expand-btn {
     top: 25px;
     right: 0;
+    left: 0;
   }
   .expand-btn svg {
     transform: rotate(-180deg);
-    stroke: var(--sidebar-main-color);
+    stroke: var(--lines-and-tooltip);
     width: 20px;
     height: 20px;
   }
