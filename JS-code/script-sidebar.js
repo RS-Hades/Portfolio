@@ -1,4 +1,4 @@
-const expand_btn = document.querySelector(".expand-btn");
+const expand_btn = document.getElementById("first-expand-button");
 
 let activeIndex;
 
@@ -24,3 +24,13 @@ allLinks.forEach((elem) => {
   });
 });
 
+const buttonSmallerSizes = document.getElementById('expand-button-small');
+buttonSmallerSizes.addEventListener('click', () => {
+  document.body.classList.toggle('small-sizes')
+})
+
+const buttonSmallerSizes2 = document.getElementById('second-expand-button');
+buttonSmallerSizes2.addEventListener('click', () => {
+  document.body.classList.toggle('small-sizes')
+  document.body.classList.toggle("collapsed");
+})
