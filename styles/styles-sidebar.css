@@ -16,7 +16,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 100vh;
+    height: 100%;
     width: 250px;
     display: flex;
     color: var(--lines-and-tooltip);
@@ -60,9 +60,6 @@
   .sidebar-links {
     width: 100%;
     height: 60%;
-  }
-  body.collapsed .sidebar-links {
-    margin-top: -13px;;
   }
   
   .sidebar-links ul {
@@ -173,8 +170,7 @@
   }
   body.collapsed .expand-btn {
     top: 25px;
-    right: 0;
-    left: 0;
+    left: 20%;
   }
   .expand-btn svg {
     transform: rotate(-180deg);
@@ -219,13 +215,13 @@
   .small-sizes #navbar {
     display: flex;
   }
-  #expand-button-smallsizes {
+  #expand-button-small {
     position: fixed;
     top: 10px;
     left: 10px;
     display:grid;
   }
-  .small-sizes #expand-button-smallsizes {
+  .small-sizes #expand-button-small {
     display: none;
   }
   .small-sizes #first-expand-button {
@@ -237,10 +233,54 @@
 }
 
 
-
 /* MEDIA QUERY FOR BIGGER SIZES !!!!!!!!!!!!!!!!!!!!!! */
-
-
+@media only screen and (min-width: 760px) {
+  body.collapsed .sidebar {
+    max-width: 8%;
+  }
+  body.collapsed .expand-btn {
+    left: 15%;
+  }
+  .collapsed .sidebar-links li a {
+    font-size: 24px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .sidebar {
+    width: 300px;
+  }
+  .sidebar-top {
+    margin: 25px 0 0 20px;
+  }
+  body.collapsed .expand-btn {
+    left: 20%;
+  }
+}
+@media only screen and (min-width: 940px) {
+  .sidebar {
+    width: 350px;
+  }
+  body.collapsed .sidebar {
+    max-width: 6%;
+  }
+  body.collapsed .expand-btn {
+    left: 18%;
+  }
+  .collapsed .sidebar-links li a {
+    font-size: 26px;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  body.collapsed .sidebar {
+    max-width: 5%;
+  }
+  body.collapsed .expand-btn {
+    left: 18%;
+  }
+  .collapsed .sidebar-links li a {
+    font-size: 27px;
+  }
+}
 
 
   /* Dark/Light Button */
