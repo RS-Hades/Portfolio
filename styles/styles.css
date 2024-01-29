@@ -15,14 +15,14 @@ body {
 #body {
     background-color: red;
     width: 90%;
-    height: 700px;
+    height: auto;
     position: absolute;
     z-index: -1;
     right: 0;
     top: 0;
 }
 
-/* MAIN SECTION: HEADER */
+/* MAIN SECTION: HEADER !!!!!!!!!!!!!!!!!!!!!!!*/
 header {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -82,13 +82,46 @@ body.light-theme header {
     font-weight: 550;
     font-family: 'Montserrat', sans-serif;
     margin-top: 20px;
-  }
-  
+}
 #button-header:hover {
     background: #9d22b6;
     color: white;
     font-size: 18px;
   }
+
+/* MAIN SECTION: PROJECTS !!!!!!!!!!!!!!!!!!!!!!*/
+#projects {
+    height: auto;
+    width: 100%;
+}
+#carrousel-container {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #fff
+}
+#carrousel {
+    display: flex;
+}
+.cards-projects {
+    min-width: 100%;
+    height: 350px;
+    font-size:  24px;
+    text-align: center;
+    line-height: 350px;
+}
+#first-project {
+    background-color: #9d22b6;
+}
+#second-project {
+    background-color: yellow;
+}
+#third-project {
+    background-color: blue;
+}
+#fourth-project {
+    background-color: green;
+}
 
 /* @MEDIA FOR SMALLER SIZES !!!!!!!!!!!!!!!!!!!!!!!!! */
 @media only screen and (max-width: 500px) {
