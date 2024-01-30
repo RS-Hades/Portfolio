@@ -7,6 +7,8 @@ const carrouselElements = document.getElementsByClassName('cards-projects');
 
 const rootStyles = document.querySelector(':root');
 
+let isInTransition = false;
+
 const directionCarrousel = {
     right: 'right',
     left: 'left'
@@ -16,13 +18,26 @@ const getTransformValue = () => Number(getComputedStyle(document.getElementById(
 
 let counter = 0;
 const reorderCarrousel = () => {
+    const transformValue = getTransformValue();
+    rootStyles.style.setProperty('--transition-carrousel', 'none');
     if (counter === carrouselElements.length - 1) {
         carrousel.appendChild(carrousel.firstElementChild);
+        rootStyles.style.setProperty('--carrousel-transform', `${transformValue + 300}px`);
+        counter--;
+    } else if (counter === 0) {
+        carrousel.prepend(carrousel.lastElementChild);
+        rootStyles.style.setProperty('--carrousel-transform', `${transformValue - 300}px`);
+        counter++;
     }
+
+    isInTransition = false;
 }
 
 const moveSlide = (direction) => {
+    if(isInTransition) return;
     const transformValue = getTransformValue();
+    rootStyles.style.setProperty('--transition-carrousel', 'transform 1s');
+    isInTransition = true;
     if (direction === directionCarrousel.left) {
         rootStyles.style.setProperty('--carrousel-transform', `${transformValue + 300}px`);
         counter--;
@@ -30,9 +45,10 @@ const moveSlide = (direction) => {
         rootStyles.style.setProperty('--carrousel-transform', `${transformValue - 300}px`);
         counter++;
     };
-
-    reorderCarrousel();
 };
 
 buttonRight.addEventListener('click', ()=>moveSlide(directionCarrousel.right));
 buttonLeft.addEventListener('click', ()=>moveSlide(directionCarrousel.left));
+
+carrousel.addEventListener('transitionend', reorderCarrousel)
+reorderCarrousel();
