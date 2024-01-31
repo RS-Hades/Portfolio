@@ -1,8 +1,8 @@
 :root {
     --tooltip-collapsed: white;
-    --lines-and-tooltip: rgb(11, 4, 12);
+    --lines-and-tooltip: rgb(30, 11, 32);
     --sidebar-hover: #353E47;
-    --sidebar-background: rgb(11, 4, 12);
+    --sidebar-background: rgb(30, 11, 32);
     --sidebar-text-color: #FFFFFF;
     --expand-button: white;
   }

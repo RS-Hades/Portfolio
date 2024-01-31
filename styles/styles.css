@@ -5,8 +5,10 @@ body {
     background-color: #c4c4c4;
 }
 :root {
-    --main-color: rgb(11, 4, 12);
+    --main-color: rgb(30, 11, 32);
     --complementary-color: white;
+    --purple: rgba(111,0,122,1);
+    --yellow: rgb(226, 226, 0);
     --carrousel-transform: 0%;
     --transition-carrousel: transform 1s;
 }
@@ -29,7 +31,8 @@ header {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
-    background: linear-gradient(to right, var(--main-color) 5%, rgb(0, 0, 0, 0) 140%), url(./../Material/magicpattern-65O4Dw6-xLg-unsplash.jpg);
+    /* background: linear-gradient(to right, var(--main-color) 5%, rgb(0, 0, 0, 0) 140%), url(./../Material/magicpattern-65O4Dw6-xLg-unsplash.jpg); */
+    background: url(./../Material/magicpattern-65O4Dw6-xLg-unsplash.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -50,6 +53,7 @@ body.light-theme header {
     font-size: 50px;
     line-height: 50px;
     margin: 0;
+    color: var(--yellow)
 }
 #header-content h2 {
     font-size: 20px;
@@ -96,19 +100,32 @@ body.light-theme header {
     height: auto;
     width: 100%;
     position: relative;
+    padding: 50px 0px;
+    background-color: rgb(240, 184, 2);
+    /* background: linear-gradient(180deg, rgb(226, 173, 0) 20%, rgb(173, 145, 5) 80%); */
 }
 #projects h1 {
     font-size: 50px;
-    margin: 30px 0 30px 0;
+    margin: 0px 0 30px 0;
     line-height: 50px;
     text-align: center;
+    color: var(--main-color);
 }
-#carrousel-container {
-    width: 97%;
-    overflow: hidden;
+#display-projects {
+    width: 98%;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: 1fr;
+}
+#carrousel-container {
+    width: 99%;
+    overflow: hidden;
+    justify-self: center;
     border-radius: 10px;
+    grid-column: 2 / 20;
 }
 #carrousel {
     display: flex;
@@ -203,23 +220,46 @@ body.light-theme header {
 #fourth-project {
     background-color: #98D996;
 }
-#buttons-project {
-    width: 100%;
-    height: auto;
-}
+
 .buttons-projects {
- width: 30px;
- height: 30px;
- font-size: 18px;
- border-radius: 50%;
+ width: 80%;
+ height: 25%;
+ font-size: 26px;
  border: 0;   
  font-weight: 600;
- background-image: url(./../Material/button-row-background.png);
- background-size: cover;
- background-position: center;
- background-repeat: no-repeat;
+ grid-row: 1 / -1;
+ z-index: 3;
+ align-self: center;
+ justify-self: center;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border: 1px solid white;
+ color: rgb(207, 207, 207);
+ background-color: rgba(255, 255, 255, 0.151);
+ position: relative;
+ border-radius: 3px;
 }
-
+.buttons-projects::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(33,0,50,1) 20%, rgba(43,0,33,1) 80%);
+    filter: blur(5px);
+    transition: 0.3s;
+    border-radius: 3px;
+}
+.buttons-projects:hover::before {
+    filter: blur(0px);
+}
+#button-projects-left {
+    grid-column: 1 / 2;
+}
+#button-projects-right {
+    grid-column: 20 / -1;
+}
 
 /* @MEDIA FOR SMALLER SIZES !!!!!!!!!!!!!!!!!!!!!!!!! */
 @media only screen and (max-width: 500px) {
