@@ -7,7 +7,7 @@ body {
 :root {
     --main-color: rgb(11, 4, 12);
     --complementary-color: white;
-    --carrousel-transform: 0px;
+    --carrousel-transform: 0%;
     --transition-carrousel: transform 1s;
 }
 
@@ -95,13 +95,20 @@ body.light-theme header {
 #projects {
     height: auto;
     width: 100%;
+    position: relative;
+}
+#projects h1 {
+    font-size: 50px;
+    margin: 30px 0 30px 0;
+    line-height: 50px;
+    text-align: center;
 }
 #carrousel-container {
-    width: 300px;
+    width: 97%;
+    overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    border: 2px solid #fff;
-    overflow: hidden;
+    border-radius: 10px;
 }
 #carrousel {
     display: flex;
@@ -110,23 +117,109 @@ body.light-theme header {
 }
 .cards-projects {
     min-width: 100%;
-    height: 300px;
-    font-size:  24px;
-    text-align: center;
-    line-height: 300px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+}
+.card-projects-info {
+    grid-column: 1 / 12;
+    height: 100%;
+    padding: 15px 10px 15px 10px;
+}
+.card-projects-info h2 {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 900;
+    margin: 0;
+}
+.card-projects-info p {
+    font-size: 16px;
+    line-height: 16px;
+    margin: 10px 0 15px 0;
+    font-weight: 500;
+}
+.links-projects {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.link-projects-webpage {
+    padding: 5px 10px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.link-projects-webpage:hover {
+    color: black;
+}
+.link-projects-webpage:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.8s;
+}
+.link-projects-webpage:hover:after {
+    transform: skewX(-45deg) scale(1, 1);
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+}
+.link-projects-github {
+    font-size: 22px;
+}
+.card-projects-img {
+    grid-column: 12 / -1;
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+}
+.card-projects-img img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 #first-project {
-    background-color: #9d22b6;
+    background-color: #37CDE9;
 }
 #second-project {
-    background-color: yellow;
+    background-color: #DDEEF5;
 }
 #third-project {
-    background-color: blue;
+    background-color: #A081DE;
 }
 #fourth-project {
-    background-color: green;
+    background-color: #98D996;
 }
+#buttons-project {
+    width: 100%;
+    height: auto;
+}
+.buttons-projects {
+ width: 30px;
+ height: 30px;
+ font-size: 18px;
+ border-radius: 50%;
+ border: 0;   
+ font-weight: 600;
+ background-image: url(./../Material/button-row-background.png);
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+
 
 /* @MEDIA FOR SMALLER SIZES !!!!!!!!!!!!!!!!!!!!!!!!! */
 @media only screen and (max-width: 500px) {
@@ -274,3 +367,5 @@ body.light-theme header {
         margin: 3% 0 0 15%;
     }
 }
+
+/* @KEYFRAMES !!!!!!!!!!!!!!!*/

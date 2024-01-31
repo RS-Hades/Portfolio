@@ -14,7 +14,7 @@ const directionCarrousel = {
     left: 'left'
 };
 
-const getTransformValue = () => Number(getComputedStyle(document.getElementById('carrousel')).getPropertyValue('--carrousel-transform').replace('px', ''));
+const getTransformValue = () => Number(getComputedStyle(document.getElementById('carrousel')).getPropertyValue('--carrousel-transform').replace('%', ''));
 
 let counter = 0;
 const reorderCarrousel = () => {
@@ -22,11 +22,11 @@ const reorderCarrousel = () => {
     rootStyles.style.setProperty('--transition-carrousel', 'none');
     if (counter === carrouselElements.length - 1) {
         carrousel.appendChild(carrousel.firstElementChild);
-        rootStyles.style.setProperty('--carrousel-transform', `${transformValue + 300}px`);
+        rootStyles.style.setProperty('--carrousel-transform', `${transformValue + 100}%`);
         counter--;
     } else if (counter === 0) {
         carrousel.prepend(carrousel.lastElementChild);
-        rootStyles.style.setProperty('--carrousel-transform', `${transformValue - 300}px`);
+        rootStyles.style.setProperty('--carrousel-transform', `${transformValue - 100}%`);
         counter++;
     }
 
@@ -39,10 +39,10 @@ const moveSlide = (direction) => {
     rootStyles.style.setProperty('--transition-carrousel', 'transform 1s');
     isInTransition = true;
     if (direction === directionCarrousel.left) {
-        rootStyles.style.setProperty('--carrousel-transform', `${transformValue + 300}px`);
+        rootStyles.style.setProperty('--carrousel-transform', `${transformValue + 100}%`);
         counter--;
     } else if (direction === directionCarrousel.right) {
-        rootStyles.style.setProperty('--carrousel-transform', `${transformValue - 300}px`);
+        rootStyles.style.setProperty('--carrousel-transform', `${transformValue - 100}%`);
         counter++;
     };
 };
