@@ -11,6 +11,12 @@ body {
     --yellow: rgb(226, 226, 0);
     --carrousel-transform: 0%;
     --transition-carrousel: transform 1s;
+    --white: #ffffff;
+    --yellow2: #FFD000;
+    --red: #C00101;
+    --red-dark: #7c0000;
+    --blue-light: #171E5E;
+    --blue-dark: #000025;
 }
 
 
@@ -28,14 +34,26 @@ body {
 
 /* MAIN SECTION: HEADER !!!!!!!!!!!!!!!!!!!!!!!*/
 header {
+    position: relative;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
     /* background: linear-gradient(to right, var(--main-color) 5%, rgb(0, 0, 0, 0) 140%), url(./../Material/magicpattern-65O4Dw6-xLg-unsplash.jpg); */
-    background: url(./../Material/magicpattern-65O4Dw6-xLg-unsplash.jpg);
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+#header-background-filter {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url(./../Material/background-header9.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px);
 }
 body.light-theme header {
     background: linear-gradient(to right, var(--main-color) 0%, rgb(0, 0, 0, 0) 100%), url(./../Material/codioful-formerly-gradienta-G084bO4wGDA-unsplash.jpg);
@@ -101,7 +119,7 @@ body.light-theme header {
     width: 100%;
     position: relative;
     padding: 50px 0px;
-    background-color: rgb(240, 184, 2);
+    background-color: var(--blue-dark);
     /* background: linear-gradient(180deg, rgb(226, 173, 0) 20%, rgb(173, 145, 5) 80%); */
 }
 #projects h1 {
