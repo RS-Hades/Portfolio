@@ -18,23 +18,13 @@
   }
 
 #navbar {
-  position: fixed;
-  width: 100%;
-  height: 35px;
-  top: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  z-index: 2;
-}
-#navbars-container {
   position: relative;
-  margin-right: auto;
-  margin-left: auto;
-  width: 90%;
-  height: 100%;
-  background-color: var(--yellow);
-  border-radius: 15px;
+  width: 100%;
+  height: 50px;
+  z-index: 2;
+  background-color: red;
 }
+
 #navbar-expanded {
   position: absolute;
   width: 100%;
@@ -53,8 +43,7 @@
 .expand-btn {
   width: 30px;
   height: 30px;
-  color: white;
-  background-color: red;
+  background-color: var(--yellow);
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -64,7 +53,7 @@
 }
 .expand-btn svg {
   transform: rotate(90deg);
-  stroke: white;
+  stroke: var(--blue-dark);
   width: 20px;
   height: 20px;
 }
@@ -76,13 +65,28 @@
   align-items: center;
   gap: 20px;
   margin-left: 10px;
+  background-color: green;
 }
 #navbar-collapsed-links h2 {
   display: none;
   margin: 0;
 }
+#navbar-collapsed-links ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  width: 100%;
+
+}
+.text-links-navbar {
+  display: none;
+  margin: 0;
+
+}
 #navbar-collapsed-links a {
   font-size: 20px;
+  color: var(--white)
 }
 
 

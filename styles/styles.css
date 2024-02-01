@@ -20,42 +20,35 @@ body {
 }
 
 
-/* MAIN SECTION: MAIN STYLES !!!!!!!!!!!!!!!!!!!!!!*/
-
-#body {
-    background-color: red;
-    width: 90%;
-    height: auto;
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    top: 0;
-}
-
 /* MAIN SECTION: HEADER !!!!!!!!!!!!!!!!!!!!!!!*/
 header {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 1fr;
-    /* background: linear-gradient(to right, var(--main-color) 5%, rgb(0, 0, 0, 0) 140%), url(./../Material/magicpattern-65O4Dw6-xLg-unsplash.jpg); */
-    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    width: 100%;
+    height: auto;
 }
 #header-background-filter {
     position: absolute;
     width: 100%;
     height: 100%;
+    overflow: hidden;
     z-index: -1;
-    background: url(./../Material/background-header9.jpg);
+    background: url(./../Material/background-header7.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     filter: blur(5px);
 }
-body.light-theme header {
+#header-first-content {
+    padding-top: 60px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+body.light-theme #header-first-content {
     background: linear-gradient(to right, var(--main-color) 0%, rgb(0, 0, 0, 0) 100%), url(./../Material/codioful-formerly-gradienta-G084bO4wGDA-unsplash.jpg);
 }
 #header-content {
@@ -96,7 +89,7 @@ body.light-theme header {
 #button-header {
     width: 45%;
     height: auto;
-    border: 3px solid #9d22b6;
+    border: 3px solid var(--blue-light);
     padding: 4px 0;
     border-radius: 45px;
     transition: all 0.3s;
@@ -108,7 +101,7 @@ body.light-theme header {
     margin-top: 20px;
 }
 #button-header:hover {
-    background: #9d22b6;
+    background: var(--blue-light);
     color: white;
     font-size: 18px;
   }

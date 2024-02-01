@@ -14,33 +14,36 @@
 </head>
 
 <body class="collapsed">
-   
+
+  <header> 
+    <div id="header-background-filter"></div>
+
     <nav class="navbar" id="navbar">
 
-      <div id="navbars-container">
+      <div id="navbar-window" class="collapsed">
 
-        <div id="navbar-expanded" class="collapsed">
-
-        </div>
+      </div>
+        
+      <div id="navbar-mobile">
         
         <div id="navbar-collapsed">
-          
+
           <div class="expand-btn" id="first-expand-button">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6.00979 2.72L10.3565 7.06667C10.8698 7.58 10.8698 8.42 10.3565 8.93333L6.00979 13.28"
               stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </div>
-          
+            
           <div id="navbar-collapsed-links">
 
             <h2>Mauricio Lovo</h2>
-
-            <a><i class="bi bi-person-circle icon icon-tabler icon-tabler-layout-dashboard"></i></a>
-            <a><i class="bi bi-folder-fill icon icon-tabler icon-tabler-transform-filled"></i></a>
-            <a><i class="bi bi-info-circle-fill icon icon-tabler icon-tabler-chart-pie"></i></a>
-            <a><i class="bi bi-chat-fill icon icon-tabler icon-tabler-box"></i></a>
-            
+            <ul>
+              <a><li><p class="text-links-navbar">Owner</p><i class="bi bi-person-circle icon icon-tabler icon-tabler-layout-dashboard icons-links"></i></li></a>
+              <a><li><p class="text-links-navbar">Projects</p><i class="bi bi-folder-fill icon icon-tabler icon-tabler-transform-filled icons-links"></i></li></a>
+              <a><li><p class="text-links-navbar">About me</p><i class="bi bi-info-circle-fill icon icon-tabler icon-tabler-chart-pie icons-links"></i></li></a>
+              <a><li><p class="text-links-navbar">Contact me</p><i class="bi bi-chat-fill icon icon-tabler icon-tabler-box icons-links"></i></li></a>
+            </ul>
           </div>
 
           <!-- <div class="sidebar-links">
@@ -99,109 +102,111 @@
                 </label>
           </div>
         </div>
+
+        <div id="navbar-expanded">
+          
+        </div>
+
       </div>
     </nav>
 
-    <header>
-        <div id="header-background-filter"></div>
-        <section id="header-content">
-          <h1>Mauricio Lovo</h1>
-            <h2>Full Stack Developer | Data Scientist</h2>
-              <section id="tecnologies">
+    <section id="header-first-content">
+      <div id="header-content">
+        <h1>Mauricio Lovo</h1>
+        <h2>Full Stack Developer | Data Scientist</h2>
+        <button id="button-header">CONTACT ME</button>
+      </div>
+      <div id="image-header">
+          <img src="./Material/M. Lovo.png">
+      </div>
+    </section>
+  </header>
 
-            </section>
-            <button id="button-header">CONTACT ME</button>
-        </section>
-        <div id="image-header">
-            <img src="./Material/M. Lovo.png">
-        </div>
-    </header>
+  <main>
 
-    <main>
+    <div id="projects">
 
-      <div id="projects">
+      <h1>Projects</h1>
+      <div id="display-projects">
+        <div id="carrousel-container">
+           <div id="carrousel">
 
-        <h1>Projects</h1>
-        <div id="display-projects">
-          <div id="carrousel-container">
-            <div id="carrousel">
-
-              <div id="first-project" class="cards-projects">
-                <section class="card-projects-info">
-                  <h2>Color Palette Page</h2>
-                  <p>This is one page that contains info about color palettes, font styles and additionally, websites where you can find free resources of these to use in your projects.</p>
-                  <div class="links-projects">
-                    <button class="link-projects-webpage" onclick="location.href=''" target="_blank">Visit Website</button>
-                    <a class="link-projects-github"><i class="bi bi-github"></i></a>
-                  </div>
-                </section>
-                <div class="card-projects-img">
-                  <img src="./Material/first-project.png" >
+            <div id="first-project" class="cards-projects">
+              <section class="card-projects-info">
+                <h2>Color Palette Page</h2>
+                <p>This is one page that contains info about color palettes, font styles and additionally, websites where you can find free resources of these to use in your projects.</p>
+                <div class="links-projects">
+                  <button class="link-projects-webpage" onclick="location.href=''" target="_blank">Visit Website</button>
+                  <a class="link-projects-github"><i class="bi bi-github"></i></a>
                 </div>
+              </section>
+              <div class="card-projects-img">
+                <img src="./Material/first-project.png" >
               </div>
+            </div>
 
-              <div id="second-project"  class="cards-projects">
-                <section class="card-projects-info">
-                  <h2>Tea Cozzy</h2>
-                  <p>This website is for a fictional tea shop called Tea Cozzy, which contains info about its mission, some  of the teas that there are, and finally the locations.</p>
-                  <div class="links-projects">
-                    <button class="link-projects-webpage" onclick="location.href=''" target="_blank">Visit Website</button>
-                    <a class="link-projects-github"><i class="bi bi-github"></i></a>
-                  </div>
-                </section>
-                <div class="card-projects-img">
-                  <img src="./Material/second-project.png" >
+            <div id="second-project"  class="cards-projects">
+              <section class="card-projects-info">
+                <h2>Tea Cozzy</h2>
+                <p>This website is for a fictional tea shop called Tea Cozzy, which contains info about its mission, some  of the teas that there are, and finally the locations.</p>
+                <div class="links-projects">
+                  <button class="link-projects-webpage" onclick="location.href=''" target="_blank">Visit Website</button>
+                  <a class="link-projects-github"><i class="bi bi-github"></i></a>
                 </div>
+              </section>
+              <div class="card-projects-img">
+                <img src="./Material/second-project.png" >
               </div>
+            </div>
 
-              <div id="third-project" class="cards-projects">
-                <section class="card-projects-info">
-                  <h2>Codikin&lt;/&gt;</h2>
-                  <p>This is a website for a fictional company that hires programmers around the world, it includes the mission, the projects that the company's team has made, why you should work there by experiences of developers and finally a form to apply for a job.</p>
-                  <div class="links-projects">
-                    <button class="link-projects-webpage" onclick="location.href=''" target="_blank">Visit Website</button>
-                    <a class="link-projects-github"><i class="bi bi-github"></i></a>
-                  </div>
-                </section>
-                <div class="card-projects-img">
-                  <img src="./Material/third-project.png" >
+            <div id="third-project" class="cards-projects">
+              <section class="card-projects-info">
+                <h2>Codikin&lt;/&gt;</h2>
+                <p>This is a website for a fictional company that hires programmers around the world, it includes the mission, the projects that the company's team has made, why you should work there by experiences of developers and finally a form to apply for a job.</p>
+                <div class="links-projects">
+                  <button class="link-projects-webpage" onclick="location.href=''" target="_blank">Visit Website</button>
+                  <a class="link-projects-github"><i class="bi bi-github"></i></a>
                 </div>
+              </section>
+              <div class="card-projects-img">
+                <img src="./Material/third-project.png" >
               </div>
+            </div>
 
-              <div id="fourth-project" class="cards-projects">
-                <section class="card-projects-info">
-                  <h2>Guardians of the Nature</h2>
-                  <p>This website is for a fictional club about biology, where you can know who are the Guardians of the Nature, about their mission with the world, discover about their adventures to know what they do, and finally a section to apply to be part of the club.</p>
-                  <div class="links-projects">
-                    <button class="link-projects-webpage" onclick="location.href=''" target="_blank">Visit Website</button>
-                    <a class="link-projects-github"><i class="bi bi-github"></i></a>
-                  </div>
-                </section>
-                <div class="card-projects-img">
-                  <img src="./Material/fourth-project.png" >
+            <div id="fourth-project" class="cards-projects">
+              <section class="card-projects-info">
+                <h2>Guardians of the Nature</h2>
+                <p>This website is for a fictional club about biology, where you can know who are the Guardians of the Nature, about their mission with the world, discover about their adventures to know what they do, and finally a section to apply to be part of the club.</p>
+                <div class="links-projects">
+                  <button class="link-projects-webpage" onclick="location.href=''" target="_blank">Visit Website</button>
+                  <a class="link-projects-github"><i class="bi bi-github"></i></a>
                 </div>
+              </section>
+              <div class="card-projects-img">
+                <img src="./Material/fourth-project.png" >
               </div>
             </div>
           </div>
+        </div>
 
               
 
-          <button class="buttons-projects" id="button-projects-left"><i class="bi bi-caret-left-fill"></i></button>
-          <button class="buttons-projects" id="button-projects-right"><i class="bi bi-caret-right-fill"></i></button>
+        <button class="buttons-projects" id="button-projects-left"><i class="bi bi-caret-left-fill"></i></button>
+        <button class="buttons-projects" id="button-projects-right"><i class="bi bi-caret-right-fill"></i></button>
                 
               
-        </div>
       </div>
+    </div>
 
-    </main>
+  </main>
 
 
-    <footer>
+  <footer>
 
-    </footer>
+  </footer>
     
-    <script src="./JS-code/script-sidebar.js"></script>
-    <script src="./JS-code/script.js"></script>
-    <script src="./JS-code/script-carrousel.js"></script>
+  <script src="./JS-code/script-sidebar.js"></script>
+  <script src="./JS-code/script.js"></script>
+  <script src="./JS-code/script-carrousel.js"></script>
 </body>
 </html>
