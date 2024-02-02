@@ -1,23 +1,9 @@
-const expand_btn = document.getElementById("first-expand-button");
+const expand_btn = document.getElementById("expand-button-navbar");
 
 let activeIndex;
 
 expand_btn.addEventListener("click", () => {
-  document.body.classList.toggle("collapsed");
-});
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-const buttonSmallerSizes = document.getElementById('expand-button-small');
-buttonSmallerSizes.addEventListener('click', () => {
-  document.body.classList.toggle('small-sizes');
-  document.body.classList.toggle("collapsed");
-})
-
-const buttonSmallerSizes2 = document.getElementById('second-expand-button');
-buttonSmallerSizes2.addEventListener('click', () => {
-  document.body.classList.toggle('small-sizes');
-  document.body.classList.toggle("collapsed");
+  document.body.classList.toggle("expand");
 });
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
