@@ -17,156 +17,51 @@
     transition: width 0.2s ease-in-out;
   }
 
-#navbar {
-  position: relative;
-  width: 100%;
-  height: 50px;
-  z-index: 2;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.466);
-}
-.expand #navbar {
-  border-bottom: 0px;
-}
-#navbar-background-transparent {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-color: rgba(255, 255, 255, 0.021);
-  filter: blur(3px);
-}
-#navbar-window {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 85% 15%;
-}
-.containers-window {
-  display: flex;
-  align-items: center;
-}
-#navbar-window-links {
-  padding-left: 15px;
-  gap: 35px;
-}
-#navbar-window-links span {
-  font-size: 19px;
-  color: var(--white);
-}
-#dark-ligth-window {
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-}
-#dark-ligth-window .theme-switch {
-  --toggle-size: 9px;
-}
-
-
-#navbar-mobile {
-  display: none;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-#navbar-collapsed {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  display: grid;
-  grid-template-columns: 15% 70% 15%;
-  align-items: center;
-  justify-content: center;
-}
-.expand-btn {
-  width: 30px;
-  height: 30px;
-  background-color: var(--yellow);
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  border-radius: 50%;
-  margin-right: auto;
-  margin-left: 10px;
-}
-.expand-btn svg {
-  transform: rotate(90deg);
-  stroke: var(--blue-dark);
-  width: 20px;
-  height: 20px;
-}
-.expand .expand-btn svg {
-  transform: rotate(-90deg);
-}
-#navbar-collapsed-links {
-  display: flex;
-  height: 100%;
-  width: 70%;
-  justify-content: space-between;
-  align-items: center;
-  justify-self: center;
-  gap: 20px;
-}
-.expand #navbar-collapsed-links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#navbar-collapsed-links h2 {
-  display: none;
-  margin: 0;
-  font-size: 28px;
-  color: white;
-}
-.expand #navbar-collapsed-links h2 {
-  /* display: block; */
-}
-#navbar-collapsed-links a {
-  font-size: 22px;
-  color: var(--white)
-}
-.expand #navbar-collapsed-links a {
-  display: none;
-}
-#dark-ligth-mobile {
-  margin-right: 10px;
-  margin-left: auto;
-
-}
-#navbar-expanded {
+nav {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 6;
+  height: 50px;
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  color: var(--white);
-  background-color: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  transition: height 3s ease-in-out;
-  display: none;
+  z-index: 10;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.466);
+  background-color: rgba(255, 255, 255, 0.078);
+  backdrop-filter: blur(10px);
 }
-.expand #navbar-expanded {
-  display: block;
-}
-#links-navbar-expanded {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 200px);
-  justify-content: center;
-  row-gap: 25px; 
-}
-.navbar-expanded-element {
-  width: 100%;
-}
-.expanded-link-element {
-  width: 100%;
+#navbar-links {
   height: 100%;
-  font-size: 22px;
+  display: flex;
+}
+nav a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 17px;
+  padding-right: 17px;
+  transition: 0.5s;
+}
+#navbar-links a:hover {
+  background-color: var(--white);
+  cursor: pointer;
+}
+#navbar-links a:hover span {
+  color: black;
+}
+#navbar-links span {
+  font-size: 19px;
+  color: var(--white);
+}
+#dark-ligth {
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: 10px;
+}
+#dark-ligth .theme-switch {
+  --toggle-size: 9px;
 }
 
 
@@ -174,72 +69,83 @@
 
 
 
-
-
-
-
-
-  
-  /* ?tooltip */
-  /* .tooltip {
-    position: relative;
-  }
-  
-  .tooltip .tooltip__content::after {
-    content: " ";
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    margin-left: -10px;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent var(--tooltip-collapsed) transparent transparent;
-  }
-  
-  .tooltip .tooltip__content {
-    visibility: hidden;
-    background-color: var(--tooltip-collapsed);
-    color: var(--lines-and-tooltip);
-    text-align: center;
-    border-radius: 6px;
-    padding: 6px 12px;
-    position: absolute;
-    z-index: 1;
-    left: 70px;
-  }
-  
-  .collapsed .tooltip:hover .tooltip__content {
-    visibility: visible;
-  }
-   */
-
-
+/* @MEDIA FOR SMALLER SIZES!!!!!!!!!!!!!!!!!!! */
 @media only screen and (max-width: 610px) {
-  #navbar-window-links span {
-    font-size: 17px;
+  nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.466);
+    background-color: rgba(255, 255, 255, 0.078);
+    backdrop-filter: blur(10px);
   }
-  #dark-ligth-window .theme-switch {
-    --toggle-size: 8px;
+  #navbar-links {
+    height: 100%;
+    display: flex;
   }
-}
-@media only screen and (max-width: 550px) {
-  #navbar-window {
-    display: none;
+  nav a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 17px;
+    padding-right: 17px;
+    transition: 0.5s;
   }
-  #navbar-mobile {
-    display: block;
+  #navbar-links a:hover {
+    background-color: var(--white);
+    cursor: pointer;
   }
-}
-@media only screen and (max-width: 500px) {
-  #dark-ligth-mobile .theme-switch {
-    --toggle-size: 7px;
+  #navbar-links a:hover span {
+    color: black;
   }
-  #navbar-collapsed-links a {
-    font-size: 20px;
+  #navbar-links span {
+    font-size: 19px;
+    color: var(--white);
+  }
+  #dark-ligth {
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+  #dark-ligth .theme-switch {
+    --toggle-size: 9px;
   }
 }
 
+
+
+
+/* @MEDIA FOR BIGGER SIZES !!!!!!!!!!!!!!!!!! */
+@media only screen and (min-width: 900px) {
+  nav {
+    height: 60px;
+  }
+  #dark-ligth .theme-switch {
+    --toggle-size: 10px;
+  }
+  #navbar-links span {
+    font-size: 21px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  #dark-ligth .theme-switch {
+    --toggle-size: 11px;
+  }
+  #navbar-links span {
+    font-size: 22px;
+  }
+  nav a {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 
 
