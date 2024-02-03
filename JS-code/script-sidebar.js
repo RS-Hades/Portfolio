@@ -1,40 +1,45 @@
-const expand_btn = document.getElementById("expand-button-navbar");
-
-let activeIndex;
+const expand_btn = document.getElementById("togglerLable");
 
 expand_btn.addEventListener("click", () => {
-  document.body.classList.toggle("expand");
+  document.body.classList.toggle("expanded");
 });
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const getClass = document.getElementsByClassName("collapsed");
-const firstTooltip = document.getElementById('tooltip1');
-const secondTooltip = document.getElementById('tooltip2');
-const thirdTooltip = document.getElementById('tooltip3');
-const fourthTooltip = document.getElementById('tooltip4');
+const getClass = document.getElementsByClassName("expanded");
+const firstLink = document.getElementById('nav-link1');
+const secondLink = document.getElementById('nav-link2');
+const thirdLink = document.getElementById('nav-link3');
+const fourthLink = document.getElementById('nav-link4');
 
-firstTooltip.addEventListener("click", () => {
-  if (getClass.length === 0) {  
-    document.body.classList.toggle("collapsed");
-    document.body.classList.toggle('small-sizes');
+firstLink.addEventListener("click", () => {
+  if (getClass.length !== 0) {  
+    document.body.classList.toggle("expanded");
+    expand_btn.checked = false;
   }
 });
-secondTooltip.addEventListener("click", () => {
-  if (getClass.length === 0) {  
-    document.body.classList.toggle("collapsed");
-    document.body.classList.toggle('small-sizes');
+secondLink.addEventListener("click", () => {
+  if (getClass.length !== 0) {  
+    document.body.classList.toggle("expanded");
   }
 });
-thirdTooltip.addEventListener("click", () => {
-  if (getClass.length === 0) {  
-    document.body.classList.toggle("collapsed");
-    document.body.classList.toggle('small-sizes');
+thirdLink.addEventListener("click", () => {
+  if (getClass.length !== 0) {  
+    document.body.classList.toggle("expanded");
   }
 });
-fourthTooltip.addEventListener("click", () => {
-  if (getClass.length === 0) {  
-    document.body.classList.toggle("collapsed");
-    document.body.classList.toggle('small-sizes');
+fourthLink.addEventListener("click", () => {
+  if (getClass.length !== 0) {  
+    document.body.classList.toggle("expanded");
   }
 });
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// const knowStateBtn = expand_btn.getPropertyValue('display');
+
+// const fixedNavbar = () => {
+//   if(knowStateBtn === 'none' && getClass !== 0) {
+//     document.body.classList.toggle("expanded");
+//   }
+// };
+// fixedNavbar();
