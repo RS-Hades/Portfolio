@@ -6,7 +6,7 @@
   --blue-light: #171E5E;
   --blue-dark: #000025;
   --size-of-the-lines: 8px;
-  
+}
   /* rgb(11, 4, 12) rgba(255, 252, 72, 0.432)*/
 
 body {
@@ -221,7 +221,7 @@ nav {
 
 /* @MEDIA FOR BIGGER SIZES !!!!!!!!!!!!!!!!!! */
 @media only screen and (min-width: 900px) {
-  nav {
+  #navbar {
     height: 60px;
   }
   #dark-ligth .theme-switch {
@@ -238,7 +238,7 @@ nav {
   #navbar-links span {
     font-size: 22px;
   }
-  nav a {
+  #navbar a {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -444,3 +444,6 @@ nav {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
+
+
+

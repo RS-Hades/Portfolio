@@ -1,4 +1,5 @@
 const expand_btn = document.getElementById("togglerLable");
+const expandCheckbox = document.getElementById('toggleChecker');
 
 expand_btn.addEventListener("click", () => {
   document.body.classList.toggle("expanded");
@@ -15,22 +16,25 @@ const fourthLink = document.getElementById('nav-link4');
 firstLink.addEventListener("click", () => {
   if (getClass.length !== 0) {  
     document.body.classList.toggle("expanded");
-    expand_btn.checked = false;
+    expandCheckbox.checked = false ;
   }
 });
 secondLink.addEventListener("click", () => {
   if (getClass.length !== 0) {  
     document.body.classList.toggle("expanded");
+    expandCheckbox.checked = false;
   }
 });
 thirdLink.addEventListener("click", () => {
   if (getClass.length !== 0) {  
     document.body.classList.toggle("expanded");
+    expandCheckbox.checked = false;
   }
 });
 fourthLink.addEventListener("click", () => {
   if (getClass.length !== 0) {  
     document.body.classList.toggle("expanded");
+    expandCheckbox.checked = false;
   }
 });
 
