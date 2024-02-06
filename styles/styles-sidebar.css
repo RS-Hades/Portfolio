@@ -47,7 +47,7 @@ nav {
   width: auto;
   height: auto;
   position: fixed;
-  z-index: 9999;
+  z-index: 99999999999;
   top: 10px;
   left: 10px;
   border: 0px;
@@ -164,6 +164,7 @@ nav {
   }
   .expanded #navbar {
     transform: translateX(0%);
+    z-index: 10000
   }
   #navbar-button {
     display: block;

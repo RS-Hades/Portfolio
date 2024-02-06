@@ -286,7 +286,17 @@ main {
 
 
 /* MAIN SECTION: ABOUT ME !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
-
+#container-about-me {
+    width: 100%;
+    height: auto;
+    padding-top: 65px;
+    background-color: green;
+}
+#container-about-me h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+}
 #about-me {
     width: 100%;
     height: 100%;
@@ -294,13 +304,13 @@ main {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
-    padding: 60px 15px 60px 15px;
+    padding: 45px 15px 60px 15px;
     gap: 15px;
     background-color: green;
 }
 #about-photo {
-    grid-column: 1 / 4;
-    grid-row: 1 / 4;
+    grid-column: 1 / 5;
+    grid-row: 1 / 5;
     display: grid;
     grid-template-rows: repeat(10, 1fr);
 }
@@ -320,7 +330,10 @@ main {
     grid-column: 1 / -1;
     overflow: hidden;
     margin: 0;
-    z-index: 5;
+    z-index: 2;
+}
+.expanded #photo-mau {
+    z-index: 0;
 }
 #photo-mau img {
     width: 100%;
@@ -331,28 +344,68 @@ main {
     border-radius: 5px;
 }
 #who-is-mauri {
-    grid-column: 1 / 4 ;
-    grid-row: 4 / -1;
+    grid-column: 1 / 5 ;
+    grid-row: 5 / -1;
     background-color: red;
+    padding: 10px 15px 25px 15px;
+    border-radius: 10px;
+} 
+#who-is-mauri h2 {
+    margin: 10px 0 10px 0;
+    font-size: 28px;
+}
+#who-is-mauri p {
+    margin: 0;
+    font-size: 17px;
+}
+#who-is-mauri p:first-of-type {
+    margin: 0 0 20px 0;
 }
 #general-info-about {
-    grid-column: 4 / -1;
+    grid-column: 5 / -1;
     grid-row: 1 / -1;
     background-color: yellow;
-    padding: 5px;
+    padding: 5px 15px 15px 15px;
+    border-radius: 15px;
+}
+#general-info-about h2 {
+    margin: 25px 0 5px 0;
+    font-size: 28px;
+}
+#general-info-about p {
+    margin: 0;
 }
 #list-skills {
     display: flex;
     flex-direction: column;
     list-style: none;
     padding: 0;
+    margin: 10px 0 0 0;
+    gap: 15px;
 }
 #list-skills li {
     display: flex;
     flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 15px;
+}
+#fullStack {
+    background-color: red;
+}
+#dataScientist {
+    background-color: purple;
+}
+#versionControl {
+    background-color: salmon;
+}
+#list-skills h3 {
+    margin: 0;
 }
 .category-skills {
     display: flex;
+    padding: 0 5px;
+    gap: 25px;
 }
 .skill-container {
     display: flex;
@@ -361,11 +414,71 @@ main {
 }
 .skill-container p {
     margin: 0;
+    font-size: 15px;
+}
+.skill-container i {
+    font-size: 30px;
 }
 
 
 /* @MEDIA FOR SMALLER SIZES !!!!!!!!!!!!!!!!!!!!!!!!! */
 
+@media only screen and (max-width: 620px) {
+    .category-skills {
+        gap: 15px;
+    }
+    .skill-container p {
+        font-size: 14px;
+    }
+    .skill-container i {
+        font-size: 28px;
+    }
+}
+@media only screen and (max-width: 540px) {
+    #about-photo {
+        grid-column: 1 / 6;
+        grid-row: 1 / 5;
+        display: grid;
+        grid-template-rows: repeat(10, 1fr);
+    }
+    #who-is-mauri {
+        grid-column: 6 / -1 ;
+        grid-row: 1 / 5;
+    } 
+    #general-info-about {
+        grid-column: 1 / -1;
+        grid-row: 5 / -1;
+    }
+}
+@media only screen and (max-width: 510px) {
+    #about-me {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 26% 18% 56%;
+    }
+    #about-photo {
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-columns: repeat(10, 1fr);
+    }
+    #about-square {
+        grid-row: 5 / -1;
+        grid-column: 3 / 9;
+    }
+    #photo-mau {
+        grid-row: 1 / -1;
+        grid-column: 3 / 9;
+    }
+    #who-is-mauri {
+        grid-row: 2 / 3;
+        grid-column: 1 / -1;
+    } 
+    #general-info-about {
+        grid-row: 3 / -1;
+        grid-column: 1 / -1;
+    }
+}
 @media only screen and (max-width: 460px) {
     #button-header {
         font-size: 14px;
@@ -393,6 +506,43 @@ main {
         display: flex;
     }
 }
+@media only screen and (max-width: 430px) {
+    #about-me {
+        grid-template-rows: 23% 19% 58%;
+    }
+    #about-photo {
+        grid-template-columns: 17% 66% 17%;
+    }
+    #about-square {
+        grid-column: 2 / 3;
+    }
+    #photo-mau {
+        grid-column: 2 / 3;
+    }
+}
+@media only screen and (max-width: 385px) {
+    #about-me {
+        grid-template-rows: 21% 21% 58%;
+    }
+    #about-photo {
+        grid-template-columns: 17% 66% 17%;
+    }
+    #about-square {
+        grid-column: 2 / 3;
+    }
+    #photo-mau {
+        grid-column: 2 / 3;
+    }
+    #who-is-mauri h2 {
+        font-size: 24px;
+    }
+    #general-info-about h2 {
+        font-size: 24px;
+    }
+    #who-is-mauri p {
+        font-size: 16px;
+    }
+}
 @media only screen and (max-width: 380px) {
     #header-content h1 {
         font-size: 45px;
@@ -412,8 +562,33 @@ main {
         width: 85%;
     }
 }
+@media only screen and (max-width: 365px) {
+    #about-me {
+        grid-template-rows: 18% 23% 59%;
+    }
+    #about-photo {
+        grid-template-columns: 15% 70% 15%;
+    }
+    #about-square {
+        grid-column: 2 / 3;
+    }
+    #photo-mau {
+        grid-column: 2 / 3;
+    }
+}
 
 /* @MEDIA FOR BIGGER SIZES !!!!!!!!!!!!!!!!!!!!!!!!!!! */
+@media only screen and (min-width: 690px) {
+    #about-photo {
+        grid-row: 1 / 6;
+    }
+    #who-is-mauri {
+        grid-row: 6 / -1;
+    } 
+    #general-info-about {
+        grid-row: 1 / -1;
+    }
+}
 @media only screen and (min-width: 760px) {
     #body {
         width: 92%;
@@ -442,6 +617,38 @@ main {
         grid-column: 5 / -1;
     }
 }
+@media only screen and (min-width: 840px) {
+    #about-photo {
+        grid-column: 1 / 4;
+        grid-row: 1 / 5;
+    }
+    #who-is-mauri {
+        grid-column: 1 / 4 ;
+        grid-row: 5 / -1;
+    } 
+    #who-is-mauri p {
+        font-size: 18px;
+    }
+    #general-info-about {
+        grid-column: 4 / -1;
+        grid-row: 1 / -1;
+    }
+    #general-info-about p {
+        font-size: 17px;
+    }
+    #list-skills {
+        margin: 15px 0 0 0;
+        gap: 20px;
+    }
+    #list-skills li {
+        padding: 15px;
+    }
+    .category-skills {
+        padding: 0 10px;
+        gap: 30px;
+    }
+    
+}
 @media only screen and (min-width: 900px) {
     #header-content {
         margin-top: 15%;
@@ -449,6 +656,14 @@ main {
     #image-header {
         grid-column: 6 / -1;
     }
+}
+@media only screen and (min-width: 910px) {
+    #about-photo {
+        grid-row: 1 / 6;
+    }
+    #who-is-mauri {
+        grid-row: 6 / -1;
+    } 
 }
 @media only screen and (min-width: 940px) {
     #body {
@@ -460,6 +675,19 @@ main {
     }
     #header-content h2 {
         font-size: 26px;
+    }
+    #general-info-about h2 {
+        font-size: 30px;
+    }
+    #list-skills li {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        align-items: center;
+        padding: 20px 10px;
+        gap: 0;
+    }
+    #list-skills h3 {
+        font-size: 20px;
     }
 }
 @media only screen and (min-width: 1024px) {
@@ -477,10 +705,45 @@ main {
         grid-column: 7 / -1;
     }
 }
-@media only screen and (min-width: 1100px) {
-    #body {
-        width: 95%;
+@media only screen and (min-width: 1090px) {
+    #about-me {
+        grid-template-columns: 30% 68%;
+        grid-template-rows: 50% 50%;
+        padding: 60px 20px 60px 15px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%
     }
+    #about-photo {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    #who-is-mauri {
+        grid-column: 1 / 2;
+        grid-row: 2 / -1;
+    } 
+    #who-is-mauri h2 {
+        margin: 10px 0 10px 0;
+        font-size: 30px;
+    }
+    #who-is-mauri p {
+        font-size: 19px;
+    }
+    #general-info-about {
+        grid-column: 2 / -1;
+        grid-row: 1 / -1;
+    }
+    #general-info-about p {
+        font-size: 19px;
+    }
+    #list-skills li {
+        grid-template-columns: 38% 62%;
+    }
+    .skill-container {
+        gap: 5px;
+    }
+}
+@media only screen and (min-width: 1100px) {
     #header-content {
         margin: 5% 0 0 10%;
     }
@@ -490,6 +753,10 @@ main {
     }
     #header-content h2 {
         font-size: 30px;
+    }
+    #about-me {
+        grid-template-columns: 31% 68%;
+        grid-template-rows: 50% 50%;
     }
 }
 @media only screen and (min-width: 1175px) {
@@ -501,6 +768,56 @@ main {
     }
     #header-content {
         margin: 3% 0 0 15%;
+    }
+    
+}
+@media only screen and (min-width: 1250px) {
+    #about-me {
+        grid-template-columns: 31% 68%;
+        grid-template-rows: 55% 45%;
+    }
+    #who-is-mauri h2 {
+        font-size: 31px;
+    }
+    #general-info-about h2 {
+        font-size: 32px;
+    }
+    #general-info-about p {
+        font-size: 20px;
+    }
+    #list-skills h3 {
+        font-size: 22px;
+    }
+}
+@media only screen and (min-width: 1325px) {
+    #about-me {
+        grid-template-columns: 31% 68%;
+        grid-template-rows: 56% 44%;
+    }
+    #who-is-mauri h2 {
+        font-size: 32px;
+    }
+    #who-is-mauri p {
+        font-size: 20px;
+    }
+    #list-skills li {
+        grid-template-columns: 32% 68%;
+    }
+}
+@media only screen and (min-width: 1375px) {
+    #about-me {
+        grid-template-rows: 57% 43%;
+    }
+}
+@media only screen and (min-width: 1400px) {
+    #about-me {
+        grid-template-rows: 59% 41%;
+    }
+}
+@media only screen and (min-width: 1420px) {
+    #about-me {
+        grid-template-columns: 32% 68%;
+        grid-template-rows: 60% 40%;
     }
 }
 
