@@ -1,54 +1,49 @@
-const expand_btn = document.getElementById("first-expand-button");
-
-let activeIndex;
+const expand_btn = document.getElementById("togglerLable");
+const expandCheckbox = document.getElementById('toggleChecker');
 
 expand_btn.addEventListener("click", () => {
-  document.body.classList.toggle("collapsed");
-});
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-const buttonSmallerSizes = document.getElementById('expand-button-small');
-buttonSmallerSizes.addEventListener('click', () => {
-  document.body.classList.toggle('small-sizes');
-  document.body.classList.toggle("collapsed");
-})
-
-const buttonSmallerSizes2 = document.getElementById('second-expand-button');
-buttonSmallerSizes2.addEventListener('click', () => {
-  document.body.classList.toggle('small-sizes');
-  document.body.classList.toggle("collapsed");
+  document.body.classList.toggle("expanded");
 });
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-const getClass = document.getElementsByClassName("collapsed");
-const firstTooltip = document.getElementById('tooltip1');
-const secondTooltip = document.getElementById('tooltip2');
-const thirdTooltip = document.getElementById('tooltip3');
-const fourthTooltip = document.getElementById('tooltip4');
+const getClass = document.getElementsByClassName("expanded");
+const firstLink = document.getElementById('nav-link1');
+const secondLink = document.getElementById('nav-link2');
+const thirdLink = document.getElementById('nav-link3');
+const fourthLink = document.getElementById('nav-link4');
 
-firstTooltip.addEventListener("click", () => {
-  if (getClass.length === 0) {  
-    document.body.classList.toggle("collapsed");
-    document.body.classList.toggle('small-sizes');
+firstLink.addEventListener("click", () => {
+  if (getClass.length !== 0) {  
+    document.body.classList.toggle("expanded");
+    expandCheckbox.checked = false ;
   }
 });
-secondTooltip.addEventListener("click", () => {
-  if (getClass.length === 0) {  
-    document.body.classList.toggle("collapsed");
-    document.body.classList.toggle('small-sizes');
+secondLink.addEventListener("click", () => {
+  if (getClass.length !== 0) {  
+    document.body.classList.toggle("expanded");
+    expandCheckbox.checked = false;
   }
 });
-thirdTooltip.addEventListener("click", () => {
-  if (getClass.length === 0) {  
-    document.body.classList.toggle("collapsed");
-    document.body.classList.toggle('small-sizes');
+thirdLink.addEventListener("click", () => {
+  if (getClass.length !== 0) {  
+    document.body.classList.toggle("expanded");
+    expandCheckbox.checked = false;
   }
 });
-fourthTooltip.addEventListener("click", () => {
-  if (getClass.length === 0) {  
-    document.body.classList.toggle("collapsed");
-    document.body.classList.toggle('small-sizes');
+fourthLink.addEventListener("click", () => {
+  if (getClass.length !== 0) {  
+    document.body.classList.toggle("expanded");
+    expandCheckbox.checked = false;
   }
 });
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// const knowStateBtn = expand_btn.getPropertyValue('display');
+
+// const fixedNavbar = () => {
+//   if(knowStateBtn === 'none' && getClass !== 0) {
+//     document.body.classList.toggle("expanded");
+//   }
+// };
+// fixedNavbar();

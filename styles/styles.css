@@ -1,8 +1,13 @@
 /* UNIVERSAL STYLES  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 body {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     background-color: #c4c4c4;
+    width: 100%;
+}
+* {
+    box-sizing: border-box;
 }
 :root {
     --main-color: rgb(30, 11, 32);
@@ -11,34 +16,41 @@ body {
     --yellow: rgb(226, 226, 0);
     --carrousel-transform: 0%;
     --transition-carrousel: transform 1s;
+    --white: #ffffff;
+    --yellow2: #FFD000;
+    --red: #C00101;
+    --red-dark: #7c0000;
+    --blue-light: #171E5E;
+    --blue-dark: #000025;
 }
 
-
-/* MAIN SECTION: MAIN STYLES !!!!!!!!!!!!!!!!!!!!!!*/
-
-#body {
-    background-color: red;
-    width: 90%;
-    height: auto;
-    position: absolute;
-    z-index: -1;
-    right: 0;
-    top: 0;
-}
 
 /* MAIN SECTION: HEADER !!!!!!!!!!!!!!!!!!!!!!!*/
 header {
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+}
+#header-background-filter {
+    position: absolute;
+    width: 100%;
+    height: 110%;
+    top: -50px;
+    overflow: hidden;
+    z-index: -1;
+    background: url(./../Material/background-header7.jpg);
+    background-size: cover;
+    background-position: 80%;
+    background-repeat: no-repeat;
+    filter: blur(4px);
+}
+#header-first-content {
+    padding-top: 15px;
+    position: relative;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: 1fr;
-    /* background: linear-gradient(to right, var(--main-color) 5%, rgb(0, 0, 0, 0) 140%), url(./../Material/magicpattern-65O4Dw6-xLg-unsplash.jpg); */
-    background: url(./../Material/magicpattern-65O4Dw6-xLg-unsplash.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-body.light-theme header {
-    background: linear-gradient(to right, var(--main-color) 0%, rgb(0, 0, 0, 0) 100%), url(./../Material/codioful-formerly-gradienta-G084bO4wGDA-unsplash.jpg);
 }
 #header-content {
     grid-column: 1 / 5;
@@ -63,7 +75,6 @@ body.light-theme header {
     grid-column: 3 / -1;
     width: 100%;
     height: auto;
-    /* background-color: yellow; */
     margin: 0;
     grid-row: 1 / -1;
 }
@@ -78,7 +89,7 @@ body.light-theme header {
 #button-header {
     width: 45%;
     height: auto;
-    border: 3px solid #9d22b6;
+    border: 3px solid var(--blue-light);
     padding: 4px 0;
     border-radius: 45px;
     transition: all 0.3s;
@@ -90,26 +101,31 @@ body.light-theme header {
     margin-top: 20px;
 }
 #button-header:hover {
-    background: #9d22b6;
+    background: var(--blue-light);
     color: white;
     font-size: 18px;
   }
 
-/* MAIN SECTION: PROJECTS !!!!!!!!!!!!!!!!!!!!!!*/
+
+main {
+    width: 100%;
+    height: auto;
+}
+/* MAIN SECTION: PROJECTS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 #projects {
     height: auto;
     width: 100%;
     position: relative;
-    padding: 50px 0px;
-    background-color: rgb(240, 184, 2);
+    padding: 80px 0px 100px 0;
+    background-color: var(--blue-dark);
     /* background: linear-gradient(180deg, rgb(226, 173, 0) 20%, rgb(173, 145, 5) 80%); */
 }
 #projects h1 {
-    font-size: 50px;
-    margin: 0px 0 30px 0;
-    line-height: 50px;
+    font-size: 60px;
+    margin: 0px 0 40px 0;
+    line-height: 60px;
     text-align: center;
-    color: var(--main-color);
+    color: white;
 }
 #display-projects {
     width: 98%;
@@ -141,7 +157,7 @@ body.light-theme header {
 .card-projects-info {
     grid-column: 1 / 12;
     height: 100%;
-    padding: 15px 10px 15px 10px;
+    padding: 15px 10px 15px 15px;
 }
 .card-projects-info h2 {
     font-size: 30px;
@@ -195,7 +211,80 @@ body.light-theme header {
     transition: all 0.8s;
 }
 .link-projects-github {
-    font-size: 22px;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.4s;
+}
+.link-projects-github:hover {
+    color: rgb(94, 4, 99);
+}
+.technologies-projects {
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-top: 15px;
+}
+.technologies-projects h4 {
+    font-size: 18px;
+    margin: 0;
+}
+.technologie-list {
+    display: flex;
+}
+.technologie {
+    position: relative;
+    padding: 0 15px 0 15px;
+    font-size: 28px;
+}
+.technologie span {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    background-color: red;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 130%;
+    z-index: 5;
+    transition: all 1s;
+}
+.technologie span:before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent red transparent;
+}
+.technologie .tooltip-invert {
+    top: auto;
+    bottom: 130%;
+}
+.technologie .tooltip-invert:before {
+    top: 100%;
+    bottom: auto;
+    border-color: red transparent transparent transparent;
+}
+.technologie:hover span {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+.tech-html, .tech-css {
+    transition: color 300ms;
+}
+.technologie:hover .tech-html {
+    color: rgb(255, 157, 0);
+}
+.technologie:hover .tech-css {
+    color: rgb(9, 86, 211);
 }
 .card-projects-img {
     grid-column: 12 / -1;
@@ -228,7 +317,7 @@ body.light-theme header {
  border: 0;   
  font-weight: 600;
  grid-row: 1 / -1;
- z-index: 3;
+ z-index: 2;
  align-self: center;
  justify-self: center;
  display: flex;
@@ -261,13 +350,249 @@ body.light-theme header {
     grid-column: 20 / -1;
 }
 
+
+/* MAIN SECTION: ABOUT ME !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+#container-about-me {
+    width: 100%;
+    height: auto;
+    padding-top: 65px;
+    background-color: green;
+}
+#container-about-me h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+}
+#about-me {
+    width: 100%;
+    height: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    padding: 45px 15px 60px 15px;
+    gap: 15px;
+    background-color: green;
+}
+#about-photo {
+    grid-column: 1 / 5;
+    grid-row: 1 / 5;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+}
+#about-square {  
+    background-color: #37cee9a7;
+    backdrop-filter: blur(15px);
+    outline: 2px solid lightblue;
+    border-radius: 5px;
+    box-shadow: 1px 1px 38px -3px #37cee9;
+-webkit-box-shadow: 1px 1px 38px -3px #37cee9;
+-moz-box-shadow: 1px 1px 38px -3px #37cee9;
+    grid-row: 5 / -1;
+    grid-column: 1 / -1;
+}
+#photo-mau {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    overflow: hidden;
+    margin: 0;
+    z-index: 2;
+}
+.expanded #photo-mau {
+    z-index: 0;
+}
+#photo-mau img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    border-radius: 5px;
+}
+#who-is-mauri {
+    grid-column: 1 / 5 ;
+    grid-row: 5 / -1;
+    background-color: red;
+    padding: 10px 15px 25px 15px;
+    border-radius: 10px;
+} 
+#who-is-mauri h2 {
+    margin: 10px 0 10px 0;
+    font-size: 28px;
+}
+#who-is-mauri p {
+    margin: 0;
+    font-size: 17px;
+}
+#who-is-mauri p:first-of-type {
+    margin: 0 0 20px 0;
+}
+#general-info-about {
+    grid-column: 5 / -1;
+    grid-row: 1 / -1;
+    background-color: yellow;
+    padding: 5px 15px 15px 15px;
+    border-radius: 15px;
+}
+#general-info-about h2 {
+    margin: 25px 0 5px 0;
+    font-size: 28px;
+}
+#general-info-about p {
+    margin: 0;
+}
+#list-skills {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    gap: 15px;
+}
+#list-skills li {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 15px;
+}
+#fullStack {
+    background-color: red;
+}
+#dataScientist {
+    background-color: purple;
+}
+#versionControl {
+    background-color: salmon;
+}
+#list-skills h3 {
+    margin: 0;
+}
+.category-skills {
+    display: flex;
+    padding: 0 5px;
+    gap: 25px;
+}
+.skill-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skill-container p {
+    margin: 0;
+    font-size: 15px;
+}
+.skill-container i {
+    font-size: 30px;
+}
+
+
 /* @MEDIA FOR SMALLER SIZES !!!!!!!!!!!!!!!!!!!!!!!!! */
-@media only screen and (max-width: 500px) {
-    #body {
-        width: 100%;
+
+@media only screen and (max-width: 620px) {
+    .category-skills {
+        gap: 15px;
     }
-    header {
-        padding-top: 55px;
+    .skill-container p {
+        font-size: 14px;
+    }
+    .skill-container i {
+        font-size: 28px;
+    }
+}
+@media only screen and (max-width: 580px) {
+    .cards-projects {
+        grid-template-rows: 55% 45%;
+        grid-template-columns: 1fr;
+    }
+    .card-projects-info {
+        grid-column: 1 / -1;
+        grid-row: 2 / -1;
+        width: 100%;
+        padding: 5px 10px 25px 15px;
+    }
+    .technologie .tooltip-invert-smaller {
+        top: auto;
+        bottom: 130%;
+    }
+    .technologie .tooltip-invert-smaller:before {
+        top: 100%;
+        bottom: auto;
+        border-color: red transparent transparent transparent;
+    }
+    .card-projects-img {
+        grid-column: 1 / -1;
+        grid-row: 1 / 2;
+        align-items: center;
+        justify-content: center;
+    }
+    .card-projects-img img {
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+}
+@media only screen and (max-width: 540px) {
+    #projects h1 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+    #about-photo {
+        grid-column: 1 / 6;
+        grid-row: 1 / 5;
+        display: grid;
+        grid-template-rows: repeat(10, 1fr);
+    }
+    #who-is-mauri {
+        grid-column: 6 / -1 ;
+        grid-row: 1 / 5;
+    } 
+    #general-info-about {
+        grid-column: 1 / -1;
+        grid-row: 5 / -1;
+    }
+}
+@media only screen and (max-width: 510px) {
+    .cards-projects {
+        grid-template-rows: 50% 50%;
+    }
+    .card-projects-info {
+        padding: 0px 10px 25px 15px;
+    }
+    #about-me {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 26% 18% 56%;
+    }
+    #about-photo {
+        grid-row: 1 / 2;
+        grid-column: 1 / -1;
+        grid-template-rows: repeat(10, 1fr);
+        grid-template-columns: repeat(10, 1fr);
+    }
+    #about-square {
+        grid-row: 5 / -1;
+        grid-column: 3 / 9;
+    }
+    #photo-mau {
+        grid-row: 1 / -1;
+        grid-column: 3 / 9;
+    }
+    #who-is-mauri {
+        grid-row: 2 / 3;
+        grid-column: 1 / -1;
+    } 
+    #general-info-about {
+        grid-row: 3 / -1;
+        grid-column: 1 / -1;
+    }
+}
+@media only screen and (max-width: 486px) {
+    .cards-projects {
+        grid-template-rows: 45% 55%;
+    }
+    .technologies-projects {
+        margin-top: 9px;
     }
 }
 @media only screen and (max-width: 460px) {
@@ -276,13 +601,13 @@ body.light-theme header {
     }
 }
 @media only screen and (max-width: 420px) {
-    header {
+    #header-first-content {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
     #header-content {
-        margin: 0px 30px 0 30px;
+        margin: 15px 30px 0 30px;
         padding: 0;
         height: auto;
     }
@@ -295,6 +620,75 @@ body.light-theme header {
         margin-left: auto;
         margin-top: -25px;
         display: flex;
+    }
+    .card-projects-info h2 {
+        font-size: 27px;
+        line-height: 27px;
+    }
+    .link-projects-webpage {
+        padding: 5px 9px;
+        font-size: 14px;
+    }
+    .link-projects-github {
+        font-size: 25px;
+    }
+    .technologies-projects h4 {
+        font-size: 16px;
+    }
+    .technologie {
+        position: relative;
+        padding: 0 10px 0 10px;
+        font-size: 26px;
+    }
+}
+@media only screen and (max-width: 430px) {
+    #about-me {
+        grid-template-rows: 23% 19% 58%;
+    }
+    #about-photo {
+        grid-template-columns: 17% 66% 17%;
+    }
+    #about-square {
+        grid-column: 2 / 3;
+    }
+    #photo-mau {
+        grid-column: 2 / 3;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .cards-projects {
+        grid-template-rows: 40% 60%;
+    }
+    .card-projects-info h2 {
+        font-size: 26px;
+        line-height: 26px;
+    }
+    .technologie span {
+        padding: 8px;
+        font-size: 16px;
+    }
+}
+@media only screen and (max-width: 385px) {
+    #about-me {
+        grid-template-rows: 21% 21% 58%;
+    }
+    #about-photo {
+        grid-template-columns: 17% 66% 17%;
+    }
+    #about-square {
+        grid-column: 2 / 3;
+    }
+    #photo-mau {
+        grid-column: 2 / 3;
+    }
+    #who-is-mauri h2 {
+        font-size: 24px;
+    }
+    #general-info-about h2 {
+        font-size: 24px;
+    }
+    #who-is-mauri p {
+        font-size: 16px;
     }
 }
 @media only screen and (max-width: 380px) {
@@ -316,8 +710,44 @@ body.light-theme header {
         width: 85%;
     }
 }
+@media only screen and (max-width: 365px) {
+    .cards-projects {
+        grid-template-rows: 35% 65%;
+    }
+    #about-me {
+        grid-template-rows: 18% 23% 59%;
+    }
+    #about-photo {
+        grid-template-columns: 15% 70% 15%;
+    }
+    #about-square {
+        grid-column: 2 / 3;
+    }
+    #photo-mau {
+        grid-column: 2 / 3;
+    }
+}
 
 /* @MEDIA FOR BIGGER SIZES !!!!!!!!!!!!!!!!!!!!!!!!!!! */
+@media only screen and (min-width: 690px) {
+    #button-header {
+        width: 37%;
+        padding: 5px 0;
+        font-size: 17px;
+    }
+    #button-header:hover {
+        font-size: 19px;
+      }
+    #about-photo {
+        grid-row: 1 / 6;
+    }
+    #who-is-mauri {
+        grid-row: 6 / -1;
+    } 
+    #general-info-about {
+        grid-row: 1 / -1;
+    }
+}
 @media only screen and (min-width: 760px) {
     #body {
         width: 92%;
@@ -326,9 +756,15 @@ body.light-theme header {
         align-self: start;
         margin-top: 25%;
     }
+    #button-header {
+        font-size: 18px;
+    }
+    #button-header:hover {
+        font-size: 20px;
+      }
 }
 @media only screen and (min-width: 830px) {
-    header {
+    #header-first-content {
         grid-template-columns: repeat(10, 1fr);
     }
     #header-content {
@@ -346,6 +782,46 @@ body.light-theme header {
         grid-column: 5 / -1;
     }
 }
+@media only screen and (min-width: 840px) {
+    #button-header {
+        width: 35%;
+        border: 4px solid var(--blue-light);
+        font-size: 19px;
+    }
+    #button-header:hover {
+        font-size: 21px;
+      }
+    #about-photo {
+        grid-column: 1 / 4;
+        grid-row: 1 / 5;
+    }
+    #who-is-mauri {
+        grid-column: 1 / 4 ;
+        grid-row: 5 / -1;
+    } 
+    #who-is-mauri p {
+        font-size: 18px;
+    }
+    #general-info-about {
+        grid-column: 4 / -1;
+        grid-row: 1 / -1;
+    }
+    #general-info-about p {
+        font-size: 17px;
+    }
+    #list-skills {
+        margin: 15px 0 0 0;
+        gap: 20px;
+    }
+    #list-skills li {
+        padding: 15px;
+    }
+    .category-skills {
+        padding: 0 10px;
+        gap: 30px;
+    }
+    
+}
 @media only screen and (min-width: 900px) {
     #header-content {
         margin-top: 15%;
@@ -353,6 +829,21 @@ body.light-theme header {
     #image-header {
         grid-column: 6 / -1;
     }
+}
+@media only screen and (min-width: 910px) {
+    #button-header {
+        width: 31%;
+        font-size: 20px;
+    }
+    #button-header:hover {
+        font-size: 22px;
+    }
+    #about-photo {
+        grid-row: 1 / 6;
+    }
+    #who-is-mauri {
+        grid-row: 6 / -1;
+    } 
 }
 @media only screen and (min-width: 940px) {
     #body {
@@ -364,6 +855,39 @@ body.light-theme header {
     }
     #header-content h2 {
         font-size: 26px;
+    }
+    .cards-projects {
+        min-width: 100%;
+        grid-template-columns: 40% 60%;
+    }
+    .card-projects-info {
+        grid-column: 1 / 2;
+        padding: 20px 15px 15px 20px;
+    }
+    .technologie .tooltip-invert {
+        top: 100%;
+        bottom: auto;
+    }
+    .technologie .tooltip-invert:before {
+        top: auto;
+        bottom: 100%;
+        border-color: transparent transparent red transparent;
+    }
+    .card-projects-img {
+        grid-column: 2 / -1;
+    }
+    #general-info-about h2 {
+        font-size: 30px;
+    }
+    #list-skills li {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        align-items: center;
+        padding: 20px 10px;
+        gap: 0;
+    }
+    #list-skills h3 {
+        font-size: 20px;
     }
 }
 @media only screen and (min-width: 1024px) {
@@ -377,14 +901,95 @@ body.light-theme header {
     #header-content h2 {
         font-size: 28px;
     }
+    #button-header {
+        width: 28%;
+    }
     #image-header {
         grid-column: 7 / -1;
     }
+    #projects h1 {
+        font-size: 70px;
+        margin: 0px 0 50px 0;
+        line-height: 70px;
+    }
+    .card-projects-info h2 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+    .card-projects-info p {
+        font-size: 17px;
+        line-height: 17px;
+    }
+    .link-projects-webpage {
+        padding: 8px 12px;
+        border-radius: 12px;
+        font-size: 18px;
+    }
+    .link-projects-github {
+        font-size: 35px;
+    }
+    .technologie .tooltip-invert {
+        top: 120%;
+    }
+}
+@media only screen and (min-width: 1090px) {
+    .cards-projects {
+        min-width: 100%;
+        grid-template-columns: 30% 70%;
+    }
+    .card-projects-info {
+        padding: 25px 25px 15px 25px;
+    }
+    .card-projects-info h2 {
+        font-size: 34px;
+        line-height: 34px;
+    }
+    .card-projects-info p {
+        font-size: 19px;
+        line-height: 19px;
+        margin: 10px 0 20px 0;
+    }
+    .technologie .tooltip-invert {
+        top: 130%;
+    }
+    #about-me {
+        grid-template-columns: 30% 68%;
+        grid-template-rows: 50% 50%;
+        padding: 60px 20px 60px 15px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%
+    }
+    #about-photo {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    #who-is-mauri {
+        grid-column: 1 / 2;
+        grid-row: 2 / -1;
+    } 
+    #who-is-mauri h2 {
+        margin: 10px 0 10px 0;
+        font-size: 30px;
+    }
+    #who-is-mauri p {
+        font-size: 19px;
+    }
+    #general-info-about {
+        grid-column: 2 / -1;
+        grid-row: 1 / -1;
+    }
+    #general-info-about p {
+        font-size: 19px;
+    }
+    #list-skills li {
+        grid-template-columns: 38% 62%;
+    }
+    .skill-container {
+        gap: 5px;
+    }
 }
 @media only screen and (min-width: 1100px) {
-    #body {
-        width: 95%;
-    }
     #header-content {
         margin: 5% 0 0 10%;
     }
@@ -395,16 +1000,162 @@ body.light-theme header {
     #header-content h2 {
         font-size: 30px;
     }
+    #about-me {
+        grid-template-columns: 31% 68%;
+        grid-template-rows: 50% 50%;
+    }
 }
 @media only screen and (min-width: 1175px) {
-    header {
+    #header-first-content {
         padding-top: 50px;
-    }
-    #image-header {
-        grid-column: 8 / -1;
+        grid-template-columns: repeat(20, 1fr);
     }
     #header-content {
         margin: 3% 0 0 15%;
+        grid-column: 1 / 18;
+        grid-row: 1 / -1;
+    }
+    #button-header {
+        width: 21%;
+    }
+    #image-header {
+        grid-column: 13 / -1;
+    }
+    .cards-projects {
+        min-width: 100%;
+        grid-template-columns: 27% 73%;
+    }
+}
+@media only screen and (min-width: 1250px) {
+    #header-content {
+        margin: 3% 0 0 16%;
+    }
+    #image-header {
+        grid-column: 14 / -1;
+    }
+    .card-projects-info {
+        padding: 25px 15px 15px 25px;
+    }
+    .card-projects-info h2 {
+        font-size: 38px;
+        line-height: 38px;
+    }
+    .card-projects-info p {
+        font-size: 21px;
+        line-height: 21px;
+        margin: 10px 0 20px 0;
+    }
+    .link-projects-webpage {
+        padding: 9px 13px;
+        border-radius: 12px;
+        font-size: 19px;
+    }
+    .link-projects-github {
+        font-size: 40px;
+    }
+    .technologies-projects h4 {
+        font-size: 19px;
+    }
+    .technologie {
+        padding: 0 13px 0 13px;
+        font-size: 32px;
+    }
+    #about-me {
+        grid-template-columns: 31% 68%;
+        grid-template-rows: 55% 45%;
+    }
+    #who-is-mauri h2 {
+        font-size: 31px;
+    }
+    #general-info-about h2 {
+        font-size: 32px;
+    }
+    #general-info-about p {
+        font-size: 20px;
+    }
+    #list-skills h3 {
+        font-size: 22px;
+    }
+}
+@media only screen and (min-width: 1325px) {
+    #button-header {
+        width: 18%;
+        padding: 6px 0;
+        font-size: 22px;
+    }
+    #button-header:hover {
+        font-size: 24px;
+    }
+    .cards-projects {
+        grid-template-columns: 35% 65%;
+    }
+    #about-me {
+        grid-template-columns: 31% 68%;
+        grid-template-rows: 56% 44%;
+    }
+    #who-is-mauri h2 {
+        font-size: 32px;
+    }
+    #who-is-mauri p {
+        font-size: 20px;
+    }
+    #list-skills li {
+        grid-template-columns: 32% 68%;
+    }
+}
+@media only screen and (min-width: 1375px) {
+    
+    #projects {
+        padding: 80px 0px 110px 0;
+    }
+    .cards-projects {
+        grid-template-columns: 40% 60%;
+    }
+    #about-me {
+        grid-template-rows: 57% 43%;
+    }
+}
+@media only screen and (min-width: 1400px) {
+    #header-content {
+        margin: 8% 0% 0 8%;
+    }
+    #header-content h1 {
+        font-size: 120px;
+        margin-bottom: 10px;
+    }
+    #header-content h2 {
+        font-size: 35px;
+    }
+    #image-header {
+        grid-column: 14 / -1;
+    }
+    .cards-projects {
+        grid-template-columns: 50% 50%;
+    }
+    #about-me {
+        grid-template-rows: 59% 41%;
+    }
+}
+@media only screen and (min-width: 1420px) {
+    #header-content {
+        margin: 7% 0% 0 8%;
+    }
+    #header-content h1 {
+        font-size: 130px;
+    }
+    #button-header {
+        width: 16%;
+        padding: 6px 0;
+    }
+    #image-header {
+        grid-column: 15 / -1;
+    }
+    .cards-projects {
+        grid-template-columns: 60% 40%;
+    }
+    #about-me {
+        grid-template-columns: 32% 68%;
+        grid-template-rows: 60% 40%;
     }
 }
 

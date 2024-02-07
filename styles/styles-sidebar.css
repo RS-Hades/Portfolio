@@ -1,300 +1,268 @@
 :root {
-    --tooltip-collapsed: white;
-    --lines-and-tooltip: rgb(30, 11, 32);
-    --sidebar-hover: #353E47;
-    --sidebar-background: rgb(30, 11, 32);
-    --sidebar-text-color: #FFFFFF;
-    --expand-button: white;
-  }
-  
+  --white: #ffffff;
+  --yellow: #FFD000;
+  --red: #C00101;
+  --red-dark: #7c0000;
+  --blue-light: #171E5E;
+  --blue-dark: #000025;
+  --size-of-the-lines: 8px;
+}
   /* rgb(11, 4, 12) rgba(255, 252, 72, 0.432)*/
 
-  body {
-    font-family: 'Work Sans', sans-serif;
-  }
+body {
+  font-family: 'Work Sans', sans-serif;
+  overflow-x: hidden;
+}
+
   .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 250px;
-    display: flex;
-    color: var(--lines-and-tooltip);
-    flex-direction: column;
-    justify-content: center;
-    background-color: var(--sidebar-background);
+    
     transition: width 0.2s ease-in-out;
   }
-  
-  body.collapsed .sidebar {
-    max-width: 10%;
-    display: flex;
-    align-items: center;
-  }
-  
-  body.collapsed .hide {
-    position: absolute;
-    display: none;
-  }
-  
-  /*? sidebar top */
-  
-  .sidebar-top-wrapper {
-    display: flex;
-    margin-bottom: auto;
-    position: relative;
-    width: 100%;
-    height: auto;
-  }
-  
-  .sidebar-top {
-    overflow: hidden;
-    height: auto;
-    color: var(--sidebar-text-color);
-    font-weight: 700;
-    font-size: 24px;
-    margin: 16px 0 0 16px;
-  }
-  
-  /*? menu links !!!!!!!!!!!!!!!!!!!!!!!!!!!*/
-  .sidebar-links {
-    width: 100%;
-    height: 60%;
-  }
-  
-  .sidebar-links ul {
-    list-style-type: none;
-    position: relative;
+
+
+nav {
+  width: auto;
+  height: auto;
+  z-index: 3;
+  position: relative;
+}
+#navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.466);
+  background-color: rgba(255, 255, 255, 0.078);
+  backdrop-filter: blur(10px);
+}
+.expanded #navbar {
+  transform: translateX(0%);
+}
+#navbar-button {
+  width: auto;
+  height: auto;
+  position: fixed;
+  z-index: 99999999999;
+  top: 10px;
+  left: 10px;
+  border: 0px;
+  display: none;
+  padding: 10px 5px;
+  border-radius: 15%;
+  background-color: rgba(255, 255, 255, 0.129);
+  backdrop-filter: blur(15px);
+}
+.checkboxtoggler {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  cursor: pointer;
+}
+
+.line-1 {
+  background: var(--white);
+  height: var(--size-of-the-lines);
+  border-radius: 10em;
+  transition-duration: 500ms;
+}
+
+.line-2 {
+  background: var(--white);
+  height: var(--size-of-the-lines);
+  border-radius: 10em;
+  transition-duration: 500ms;
+}
+
+.line-3 {
+  background: var(--white);
+  height: var(--size-of-the-lines);
+  border-radius: 10em;
+  transition-duration: 500ms;
+}
+
+#toggleChecker {
+  height: 3em;
+  width: 100%;
+  display: none;
+}
+
+#toggleChecker:checked + #togglerLable .checkboxtoggler .line-1 {
+  -webkit-transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+  -ms-transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+  transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
+}
+
+#toggleChecker:checked + #togglerLable .checkboxtoggler .line-2 {
+  -webkit-transform: rotate(-45deg) translateY(0em) translateX(0.1em);
+  -ms-transform: rotate(-45deg) translateY(0em) translateX(0.1em);
+  transform: rotate(-45deg) translateY(0em) translateX(0.1em);
+}
+
+#toggleChecker:checked + #togglerLable .checkboxtoggler .line-3 {
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+#navbar-links {
+  height: 100%;
+  display: flex;
+}
+#navbar a {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 17px;
+  padding-right: 17px;
+  transition: 0.5s;
+}
+#navbar-links a:hover {
+  background-color: var(--white);
+  cursor: pointer;
+}
+#navbar-links a:hover span {
+  color: black;
+}
+#navbar-links span {
+  font-size: 19px;
+  color: var(--white);
+}
+#dark-ligth {
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: 10px;
+}
+#dark-ligth .theme-switch {
+  --toggle-size: 9px;
+}
+
+
+
+
+
+
+/* @MEDIA FOR SMALLER SIZES!!!!!!!!!!!!!!!!!!! */
+@media only screen and (max-width: 610px) {
+  #navbar {
+    position: fixed;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    margin: 0px;
-    padding: 0px;
-    height: 100%;
-  }
-  
-  .sidebar-links li {
-    color: var(--sidebar-text-color);
-    height: 25%;
-    display: flex;
-  }
-  
-  body.collapsed .sidebar-links li {
-    display: flex;
     justify-content: center;
     align-items: center;
+    gap: 100px;
+    backdrop-filter: blur(15px);
+    padding-top: 35px;
+    z-index: 0;
+    transform: translateX(-100%);
   }
-  
-  .sidebar-links li a:hover {
-    background-color: var(--sidebar-hover);
+  .expanded #navbar {
+    transform: translateX(0%);
+    z-index: 10000
   }
-  
-  .sidebar-links li a {
-    color: var(--sidebar-text-color);
-    flex-grow: 1;
-    padding: 0 16px;
-    font-size: 22px;
+  #navbar-button {
+    display: block;
+  }
+  #navbar-button span {
+    display: none;
+  }
+  #navbar-links {
+    height: auto;
+    width: 100%;
     display: flex;
-    gap: 28px;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    text-decoration: none;
-    transition: background-color 0.2s ease-in-out;
   }
-  
-  .sidebar-links li a .link {
-    flex-grow: 1;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: fadeIn 0.2s ease-in-out;
+  #navbar a {
+    justify-content: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 100%;
+    transition: 0s;
   }
-  
-  .sidebar-links .active:hover {
-    background-color: var(--sidebar-hover);
+  #navbar-links span {
+    font-size: 35px;
   }
-  
-  .sidebar-links .active {
-    text-decoration: none;
-    background-color: var(--sidebar-hover);
-    color: var(--sidebar-text-color);
+  #navbar-links a:hover {
+    background-color: rgba(255, 255, 255, 0);
   }
-  
-  
-  /* ?tooltip */
-  .tooltip {
-    position: relative;
+  #navbar-links a:hover span {
+    color: white;
   }
-  
-  .tooltip .tooltip__content::after {
-    content: " ";
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    margin-left: -10px;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent var(--tooltip-collapsed) transparent transparent;
+  #navbar-links a:active {
+    background-color: var(--white);
   }
-  
-  .tooltip .tooltip__content {
-    visibility: hidden;
-    background-color: var(--tooltip-collapsed);
-    color: var(--lines-and-tooltip);
-    text-align: center;
-    border-radius: 6px;
-    padding: 6px 12px;
-    position: absolute;
-    z-index: 1;
-    left: 70px;
+  #navbar-links a:active span {
+    color: black;
   }
-  
-  .collapsed .tooltip:hover .tooltip__content {
-    visibility: visible;
+  #dark-ligth {
+    margin-right: auto;
+    margin-left: auto;
   }
-  
-
-  /*? Expand buttons */
-  
-  .expand-btn {
-    position: absolute;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    background-color: var(--expand-button);
-    z-index: 2;
-    right: -18px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    top: 16px;
-  }
-  body.collapsed .expand-btn {
-    top: 25px;
-    left: 20%;
-  }
-  .expand-btn svg {
-    transform: rotate(-180deg);
-    stroke: var(--lines-and-tooltip);
-    width: 20px;
-    height: 20px;
-  }
-  #second-expand-button {
-    display: none;
-  }
-  #expand-button-small {
-    display: none;
-  }
-  
-  body.collapsed .expand-btn svg {
-    transform: rotate(-360deg);
-  }
-  
-  @keyframes fadeIn {
-    from {
-      width: 0px;
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-      width: 100%;
-    }
-  }
-
-/* MEDIA QUERY FOR SMALLER SIZES !!!!!!!!!!!!!!!!!!! */
-
-@media only screen and (max-width: 560px) {
-  body.collapsed .theme-switch__container {
-    transform: scale(0.9);
+  #dark-ligth .theme-switch {
+    --toggle-size: 12px;
   }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 400px) {
+  #navbar-links span {
+    font-size: 32px;
+  }
+  #dark-ligth .theme-switch {
+    --toggle-size: 11px;
+  }
+}
+
+
+
+/* @MEDIA FOR BIGGER SIZES !!!!!!!!!!!!!!!!!! */
+@media only screen and (min-width: 900px) {
   #navbar {
-    display: none;
+    height: 60px;
   }
-  .small-sizes #navbar {
-    display: flex;
+  #dark-ligth .theme-switch {
+    --toggle-size: 10px;
   }
-  #expand-button-small {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    display:grid;
+  #navbar-links span {
+    font-size: 21px;
   }
-  .small-sizes #expand-button-small {
-    display: none;
+}
+@media only screen and (min-width: 1024px) {
+  #dark-ligth .theme-switch {
+    --toggle-size: 11px;
   }
-  .small-sizes #first-expand-button {
-    display: none;
+  #navbar-links span {
+    font-size: 22px;
   }
-  .small-sizes #second-expand-button {
-    display: grid;
+  #navbar a {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
 
-/* MEDIA QUERY FOR BIGGER SIZES !!!!!!!!!!!!!!!!!!!!!! */
-@media only screen and (min-width: 760px) {
-  body.collapsed .sidebar {
-    max-width: 8%;
-  }
-  body.collapsed .expand-btn {
-    left: 15%;
-  }
-  .collapsed .sidebar-links li a {
-    font-size: 24px;
-  }
-}
-@media only screen and (min-width: 800px) {
-  .sidebar {
-    width: 300px;
-  }
-  .sidebar-top {
-    margin: 25px 0 0 20px;
-  }
-  body.collapsed .expand-btn {
-    left: 20%;
-  }
-}
-@media only screen and (min-width: 940px) {
-  .sidebar {
-    width: 350px;
-  }
-  body.collapsed .sidebar {
-    max-width: 6%;
-  }
-  body.collapsed .expand-btn {
-    left: 18%;
-  }
-  .collapsed .sidebar-links li a {
-    font-size: 26px;
-  }
-}
-@media only screen and (min-width: 1100px) {
-  body.collapsed .sidebar {
-    max-width: 5%;
-  }
-  body.collapsed .expand-btn {
-    left: 18%;
-  }
-  .collapsed .sidebar-links li a {
-    font-size: 27px;
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
   /* Dark/Light Button */
-  .dark-ligth {
-    width: 100%;
-    height: auto;
-    margin-top: auto;
-    margin-bottom: 16px;
-  }
-  body.collapsed .dark-ligth {
-    margin-bottom: 15px;
-  }
+
   .theme-switch {
-    --toggle-size: 10px;
+    --toggle-size: 8px;
     /* the size is adjusted using font-size,
        this is not transform scale,
        so you can choose any size */
@@ -315,9 +283,6 @@
     --back-clouds-color: #AACADF;
     --transition: .5s cubic-bezier(0, -0.02, 0.4, 1.25);
     --circle-transition: .3s cubic-bezier(0, -0.02, 0.35, 1.17);
-  }
-  body.collapsed .theme-switch {
-    --toggle-size: 8px;
   }
   .theme-switch, .theme-switch *, .theme-switch *::before, .theme-switch *::after {
     -webkit-box-sizing: border-box;
@@ -480,3 +445,6 @@
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
   }
+
+
+
