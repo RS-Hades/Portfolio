@@ -486,6 +486,114 @@ main {
     font-size: 30px;
 }
 
+/* MAIN SECTION: CONTACT ME !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+#contact-me {
+    width: 100%;
+    padding: 50px 15px 50px 15px;
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+#contact-me-container {
+    position: relative;
+    grid-column: 1 / 2;
+    background-color: lightblue;
+    border-radius: 15px;
+    padding: 15px;
+}
+#contact-me-container::before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    height: 103%;
+    width: 103%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    border-radius: 20px;
+    animation: border 3s linear infinite;
+}
+#contact-me h1 {
+    font-size: 35px;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+#contact-me h2 {
+    margin: 5px 0;
+    font-size: 23px;
+}
+#contact-me form {
+    display: flex;
+    flex-direction: column;
+}
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+  }
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 17px;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  
+  .form__field::placeholder {
+    color: transparent;
+  }
+  
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 25px;
+  }
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #9b9b9b;
+    pointer-events: none;
+  }
+  #textarea .form__label {
+    top: auto;
+    bottom: 35px;
+  }
+  .form__field:focus {
+    padding-bottom: 3px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #38caef);
+    border-image-slice: 1;
+  }
+  
+  .form__field:focus ~ .form__label {
+    position: absolute;
+    top: 5px;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #38caef;
+    font-weight: 700;
+  }
+  #textarea .form__field:focus ~ .form__label {
+    top: 5px;
+    bottom: auto;
+  }
+  
+  /* reset input */
+  .form__field:required, .form__field:invalid {
+    box-shadow: none;
+  }
+
 
 /* @MEDIA FOR SMALLER SIZES !!!!!!!!!!!!!!!!!!!!!!!!! */
 
@@ -1160,3 +1268,17 @@ main {
 }
 
 /* @KEYFRAMES !!!!!!!!!!!!!!!*/
+@keyframes border {
+    0% {
+        background-color: #37cee9;
+    }
+    33% {
+        background-color: #C00101;
+    }
+    66% {
+        background-color: #FFD000;
+    }
+    100% {
+        background-color: #37cee9;
+    }
+}

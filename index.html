@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/styles.css" id="main-css">
     <link rel="stylesheet" href="/styles/styles-sidebar.css" id="css-sidebar">
-    <link rel="stylesheet" href="/styles/dark-light-button.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="dist/hamburgers.css" rel="stylesheet">
     <title>Portfolio</title>
@@ -283,6 +282,29 @@
         </section>
 
       </div>
+    </div>
+
+    <div id="contact-me">
+      
+      <div id="contact-me-container">
+        <h1>Contact me</h1>
+        <form>
+          <h2>Send me a message!</h2>
+          <div class="form__group field">
+            <input type="input" name='name' class="form__field" placeholder="Name" required="">
+            <label for="name" class="form__label">Name</label>
+          </div>
+          <div class="form__group field">
+            <input type="email" name="email" class="form__field" placeholder="Email" required="">
+            <label for="email" class="form__label">Email</label>
+          </div>
+          <div class="form__group field" id="textarea">
+            <textarea name="message" class="form__field" required=""></textarea>
+            <label for="message" class="form__label">Write your message</label>
+          </div>
+        </form>
+      </div>
+      
     </div>
 
   </main>
