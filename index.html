@@ -288,20 +288,12 @@
       
       <div id="contact-me-container">
         <h1>Contact me</h1>
-        <form>
+        <form action="https://formspree.io/f/xyyreowo" method="post">
           <h2>Send me a message!</h2>
-          <div class="form__group field">
-            <input type="input" name='name' class="form__field" placeholder="Name" required="">
-            <label for="name" class="form__label">Name</label>
-          </div>
-          <div class="form__group field">
-            <input type="email" name="email" class="form__field" placeholder="Email" required="">
-            <label for="email" class="form__label">Email</label>
-          </div>
-          <div class="form__group field" id="textarea">
-            <textarea name="message" class="form__field" required=""></textarea>
-            <label for="message" class="form__label">Write your message</label>
-          </div>
+          <input type="input" name='name' class="contact-input" placeholder="Name" required="" maxlength="30" minlength="3">
+          <input type="email" name="email" class="contact-input" placeholder="Email" required="" maxlength="30">
+          <textarea name="message" placeholder='I wanna say you...' class="contact-input" required="" maxlength="250" minlength="3"></textarea>
+          <button type="submit">Send 📧</button>
         </form>
       </div>
       

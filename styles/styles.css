@@ -10,18 +10,16 @@ body {
     box-sizing: border-box;
 }
 :root {
-    --main-color: rgb(30, 11, 32);
-    --complementary-color: white;
-    --purple: rgba(111,0,122,1);
-    --yellow: rgb(226, 226, 0);
+    --main-color: #010c0c;
+    --complementary-color: #FBFFFF;
     --carrousel-transform: 0%;
     --transition-carrousel: transform 1s;
     --white: #ffffff;
-    --yellow2: #FFD000;
+    --yellow: #FFD000;
     --red: #C00101;
     --red-dark: #7c0000;
-    --blue-light: #171E5E;
-    --blue-dark: #000025;
+    --blue-light: #ffffff;
+    --blue-dark: #0d2944;
 }
 
 
@@ -89,7 +87,7 @@ header {
 #button-header {
     width: 45%;
     height: auto;
-    border: 3px solid var(--blue-light);
+    border: 3px solid var(--blue-dark);
     padding: 4px 0;
     border-radius: 45px;
     transition: all 0.3s;
@@ -101,7 +99,7 @@ header {
     margin-top: 20px;
 }
 #button-header:hover {
-    background: var(--blue-light);
+    background: var(--blue-dark);
     color: white;
     font-size: 18px;
   }
@@ -117,7 +115,7 @@ main {
     width: 100%;
     position: relative;
     padding: 80px 0px 100px 0;
-    background-color: var(--blue-dark);
+    background-color: var(--main-color);
     /* background: linear-gradient(180deg, rgb(226, 173, 0) 20%, rgb(173, 145, 5) 80%); */
 }
 #projects h1 {
@@ -356,12 +354,13 @@ main {
     width: 100%;
     height: auto;
     padding-top: 65px;
-    background-color: green;
+    background-color: var(--main-color);
 }
 #container-about-me h1 {
     text-align: center;
     font-size: 50px;
     margin: 0;
+    color: var(--complementary-color)
 }
 #about-me {
     width: 100%;
@@ -372,7 +371,7 @@ main {
     grid-template-rows: repeat(10, 1fr);
     padding: 45px 15px 60px 15px;
     gap: 15px;
-    background-color: green;
+    background-color: var(--main-color);
 }
 #about-photo {
     grid-column: 1 / 5;
@@ -381,13 +380,13 @@ main {
     grid-template-rows: repeat(10, 1fr);
 }
 #about-square {  
-    background-color: #37cee9a7;
+    background-color: #3ae1ffd0;
     backdrop-filter: blur(15px);
-    outline: 2px solid lightblue;
+    outline: 2px solid rgb(255, 255, 255);
     border-radius: 5px;
-    box-shadow: 1px 1px 38px -3px #37cee9;
--webkit-box-shadow: 1px 1px 38px -3px #37cee9;
--moz-box-shadow: 1px 1px 38px -3px #37cee9;
+    box-shadow: 1px 1px 38px -3px #3ae1ff;
+-webkit-box-shadow: 1px 1px 38px -3px #3ae1ff;
+-moz-box-shadow: 1px 1px 38px -3px #3ae1ff;
     grid-row: 5 / -1;
     grid-column: 1 / -1;
 }
@@ -412,7 +411,7 @@ main {
 #who-is-mauri {
     grid-column: 1 / 5 ;
     grid-row: 5 / -1;
-    background-color: red;
+    background-color: var(--blue-light);
     padding: 10px 15px 25px 15px;
     border-radius: 10px;
 } 
@@ -496,9 +495,10 @@ main {
 #contact-me-container {
     position: relative;
     grid-column: 1 / 2;
-    background-color: lightblue;
+    background-color: black;
     border-radius: 15px;
     padding: 15px;
+    color: white;
 }
 #contact-me-container::before {
     position: absolute;
@@ -525,74 +525,34 @@ main {
 #contact-me form {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
-.form__group {
-    position: relative;
-    padding: 20px 0 0;
+.contact-input {
     width: 100%;
-  }
-  
-  .form__field {
-    font-family: inherit;
-    width: 100%;
-    border: none;
-    border-bottom: 2px solid #9b9b9b;
-    outline: 0;
-    font-size: 17px;
-    color: #fff;
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
-  }
-  
-  .form__field::placeholder {
-    color: transparent;
-  }
-  
-  .form__field:placeholder-shown ~ .form__label {
-    font-size: 17px;
-    cursor: text;
-    top: 25px;
-  }
-  .form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 17px;
-    color: #9b9b9b;
-    pointer-events: none;
-  }
-  #textarea .form__label {
-    top: auto;
-    bottom: 35px;
-  }
-  .form__field:focus {
-    padding-bottom: 3px;
-    font-weight: 700;
-    border-width: 3px;
-    border-image: linear-gradient(to right, #116399, #38caef);
-    border-image-slice: 1;
-  }
-  
-  .form__field:focus ~ .form__label {
-    position: absolute;
-    top: 5px;
-    display: block;
-    transition: 0.2s;
-    font-size: 17px;
-    color: #38caef;
-    font-weight: 700;
-  }
-  #textarea .form__field:focus ~ .form__label {
-    top: 5px;
-    bottom: auto;
-  }
-  
-  /* reset input */
-  .form__field:required, .form__field:invalid {
-    box-shadow: none;
-  }
+    border-radius: 10px;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 2px solid rgb(56, 56, 56);
+    transition: 300ms;
+    color: white;
+}
+.contact-input::placeholder {
+    color: rgb(159, 159, 159);
+}
+.contact-input:focus {
+    border: 2px solid #39e1ff; 
+    background-color: rgb(29, 29, 29);
+    outline: none;
+}
+#contact-me form button {
+    width: 30%;
+    font-size: 18px;
+    padding: 5px 10px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    border: 0;
+}
 
 
 /* @MEDIA FOR SMALLER SIZES !!!!!!!!!!!!!!!!!!!!!!!!! */
