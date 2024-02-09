@@ -10,16 +10,16 @@ body {
     box-sizing: border-box;
 }
 :root {
-    --main-color: #010c0c;
-    --complementary-color: #FBFFFF;
+    --main-color: #170137;
+    --complementary-color: #F2E6D0;
     --carrousel-transform: 0%;
-    --transition-carrousel: transform 1s;
-    --white: #ffffff;
-    --yellow: #FFD000;
-    --red: #C00101;
-    --red-dark: #7c0000;
-    --blue-light: #ffffff;
-    --blue-dark: #0d2944;
+    --transition-carrousel: transform 0.5s;
+    --second-color: #ffd91b;
+    --third-color: #4ed4bc;
+    --fourth-color: #4A1B8C;
+    --sixth-color: #F235B0;
+    --sub-color: #170137;
+    --complementary-subcolor: #F2E6D0;
 }
 
 
@@ -37,11 +37,18 @@ header {
     top: -50px;
     overflow: hidden;
     z-index: -1;
-    background: url(./../Material/background-header7.jpg);
+    background: url(./../Material/background-dark-header.jpg);
     background-size: cover;
-    background-position: 80%;
+    background-position: center;
     background-repeat: no-repeat;
-    filter: blur(4px);
+    filter: blur(5px);
+}
+.light-theme #header-background-filter {
+    background: url(./../Material/background-light37.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(5px);
 }
 #header-first-content {
     padding-top: 15px;
@@ -63,7 +70,7 @@ header {
     font-size: 50px;
     line-height: 50px;
     margin: 0;
-    color: var(--yellow)
+    color: var(--second-color)
 }
 #header-content h2 {
     font-size: 20px;
@@ -87,7 +94,7 @@ header {
 #button-header {
     width: 45%;
     height: auto;
-    border: 3px solid var(--blue-dark);
+    border: 3px solid var(--third-color);
     padding: 4px 0;
     border-radius: 45px;
     transition: all 0.3s;
@@ -99,8 +106,8 @@ header {
     margin-top: 20px;
 }
 #button-header:hover {
-    background: var(--blue-dark);
-    color: white;
+    background: var(--third-color);
+    color: black;
     font-size: 18px;
   }
 
@@ -123,7 +130,7 @@ main {
     margin: 0px 0 40px 0;
     line-height: 60px;
     text-align: center;
-    color: white;
+    color: var(--complementary-color);
 }
 #display-projects {
     width: 98%;
@@ -244,7 +251,8 @@ main {
     padding: 10px;
     border-radius: 10px;
     font-size: 18px;
-    background-color: red;
+    background-color: var(--fourth-color);
+    color: var(--second-color);
     left: 50%;
     transform: translateX(-50%);
     top: 130%;
@@ -259,7 +267,7 @@ main {
     transform: translateX(-50%);
     border-width: 8px;
     border-style: solid;
-    border-color: transparent transparent red transparent;
+    border-color: transparent transparent var(--fourth-color) transparent;
 }
 .technologie .tooltip-invert {
     top: auto;
@@ -268,7 +276,7 @@ main {
 .technologie .tooltip-invert:before {
     top: 100%;
     bottom: auto;
-    border-color: red transparent transparent transparent;
+    border-color: var(--fourth-color) transparent transparent transparent;
 }
 .technologie:hover span {
     display: block;
@@ -354,11 +362,11 @@ main {
     width: 100%;
     height: auto;
     padding-top: 65px;
-    background-color: var(--main-color);
+    background-color: var(--fourth-color);
 }
 #container-about-me h1 {
     text-align: center;
-    font-size: 50px;
+    font-size: 60px;
     margin: 0;
     color: var(--complementary-color)
 }
@@ -369,9 +377,9 @@ main {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
-    padding: 45px 15px 60px 15px;
+    padding: 45px 15px 75px 15px;
     gap: 15px;
-    background-color: var(--main-color);
+    background-color: var(--fourth-color);
 }
 #about-photo {
     grid-column: 1 / 5;
@@ -380,13 +388,13 @@ main {
     grid-template-rows: repeat(10, 1fr);
 }
 #about-square {  
-    background-color: #3ae1ffd0;
+    background-color: var(--sixth-color);
     backdrop-filter: blur(15px);
-    outline: 2px solid rgb(255, 255, 255);
+    outline: 2px solid #ffa2df;
     border-radius: 5px;
-    box-shadow: 1px 1px 38px -3px #3ae1ff;
--webkit-box-shadow: 1px 1px 38px -3px #3ae1ff;
--moz-box-shadow: 1px 1px 38px -3px #3ae1ff;
+    box-shadow: 1px 1px 44px 3px var(--sixth-color);
+-webkit-box-shadow: 1px 1px 44px 3px var(--sixth-color);
+-moz-box-shadow: 1px 1px 44px 3px var(--sixth-color);
     grid-row: 5 / -1;
     grid-column: 1 / -1;
 }
@@ -411,7 +419,7 @@ main {
 #who-is-mauri {
     grid-column: 1 / 5 ;
     grid-row: 5 / -1;
-    background-color: var(--blue-light);
+    background-color: var(--third-color);
     padding: 10px 15px 25px 15px;
     border-radius: 10px;
 } 
@@ -429,7 +437,7 @@ main {
 #general-info-about {
     grid-column: 5 / -1;
     grid-row: 1 / -1;
-    background-color: yellow;
+    background-color: var(--second-color);
     padding: 5px 15px 15px 15px;
     border-radius: 15px;
 }
@@ -447,6 +455,7 @@ main {
     padding: 0;
     margin: 10px 0 0 0;
     gap: 15px;
+    color: var(--complementary-subcolor)
 }
 #list-skills li {
     display: flex;
@@ -456,13 +465,13 @@ main {
     gap: 15px;
 }
 #fullStack {
-    background-color: red;
+    background-color: var(--sub-color);
 }
 #dataScientist {
-    background-color: purple;
+    background-color: var(--sub-color);
 }
 #versionControl {
-    background-color: salmon;
+    background-color: var(--sub-color);
 }
 #list-skills h3 {
     margin: 0;
@@ -488,30 +497,38 @@ main {
 /* MAIN SECTION: CONTACT ME !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 #contact-me {
     width: 100%;
-    padding: 50px 15px 50px 15px;
+    padding: 100px 15px 100px 15px;
     display: grid;
     grid-template-columns: 55% 45%;
+    background-image: url(./../Material/background-dark-bottom.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 #contact-me-container {
     position: relative;
     grid-column: 1 / 2;
-    background-color: black;
-    border-radius: 15px;
-    padding: 15px;
-    color: white;
+    width: auto;
+    height: auto;
 }
-#contact-me-container::before {
+#contact-inback {
     position: absolute;
-    z-index: -1;
-    content: '';
-    height: 103%;
     width: 103%;
-    left: 50%;
+    height: 103%;
+    background-color: var(--third-color);
     top: 50%;
+    left: 50%;
+    z-index: 0;
     transform: translate(-50%, -50%);
-    background-color: black;
-    border-radius: 20px;
-    animation: border 3s linear infinite;
+    border-radius: 15px;
+}
+#contact-infront {
+    background-color: var(--main-color);
+    color: var(--complementary-color);
+    position: relative;
+    padding: 15px;
+    border-radius: 15px;
+    z-index: 123;
 }
 #contact-me h1 {
     font-size: 35px;
@@ -552,6 +569,7 @@ main {
     place-items: center;
     border-radius: 10px;
     border: 0;
+    background-color: var(--second-color);
 }
 
 
@@ -586,7 +604,7 @@ main {
     .technologie .tooltip-invert-smaller:before {
         top: 100%;
         bottom: auto;
-        border-color: red transparent transparent transparent;
+        border-color: var(--fourth-color) transparent transparent transparent;
     }
     .card-projects-img {
         grid-column: 1 / -1;
@@ -604,6 +622,9 @@ main {
     #projects h1 {
         font-size: 50px;
         line-height: 50px;
+    }
+    #container-about-me h1 {
+        font-size: 50px;
     }
     #about-photo {
         grid-column: 1 / 6;
@@ -631,6 +652,7 @@ main {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 26% 18% 56%;
+        padding: 20px 15px 110px 15px;
     }
     #about-photo {
         grid-row: 1 / 2;
@@ -853,12 +875,15 @@ main {
 @media only screen and (min-width: 840px) {
     #button-header {
         width: 35%;
-        border: 4px solid var(--blue-light);
+        border: 4px solid var(--third-color);
         font-size: 19px;
     }
     #button-header:hover {
         font-size: 21px;
-      }
+    }
+    #about-me {
+        gap: 15px;
+    }
     #about-photo {
         grid-column: 1 / 4;
         grid-row: 1 / 5;
@@ -897,6 +922,9 @@ main {
     #image-header {
         grid-column: 6 / -1;
     }
+    #container-about-me h1 {
+        font-size: 70px;
+    }
 }
 @media only screen and (min-width: 910px) {
     #button-header {
@@ -924,6 +952,10 @@ main {
     #header-content h2 {
         font-size: 26px;
     }
+    #about-me {
+        padding: 45px 15px 80px 15px;
+        gap: 20px;
+    }
     .cards-projects {
         min-width: 100%;
         grid-template-columns: 40% 60%;
@@ -939,7 +971,7 @@ main {
     .technologie .tooltip-invert:before {
         top: auto;
         bottom: 100%;
-        border-color: transparent transparent red transparent;
+        border-color: transparent transparent var(--fourth-color) transparent;
     }
     .card-projects-img {
         grid-column: 2 / -1;
@@ -988,6 +1020,9 @@ main {
         font-size: 17px;
         line-height: 17px;
     }
+    #container-about-me h1 {
+        font-size: 80px;
+    }
     .link-projects-webpage {
         padding: 8px 12px;
         border-radius: 12px;
@@ -1023,10 +1058,11 @@ main {
     #about-me {
         grid-template-columns: 30% 68%;
         grid-template-rows: 50% 50%;
-        padding: 60px 20px 60px 15px;
+        padding: 60px 20px 115px 15px;
         margin-left: auto;
         margin-right: auto;
-        width: 90%
+        width: 90%;
+        gap: 30px;
     }
     #about-photo {
         grid-column: 1 / 2;
