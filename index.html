@@ -207,81 +207,104 @@
       </div>
     </div>
 
-    <div id="container-about-me">
-      <h1>About Me</h1>
-      <div id="about-me">
-
-        <section id="about-photo">
-          <div id="about-square"></div>
-          <div id="photo-mau">
-            <img src="./Material/aboutme.png" alt="">
-          </div>
-        </section>
-
-        <section id="who-is-mauri">
-          <h2>Who is Mauricio Lovo?</h2>
+    <div id='about-me'>
+      <section id="who-is-mauri">
+        <div id="who-is-info">
+          <h1>About me</h1>
+          <h2>Who is Mauri?</h2>
           <p>I'm a full stack developer and data scientist from El Salvador 💻</p>
-          <p>Talking a little bit about my personal life, I've been in a digital environment all of my life due to I always had devices where i could learn a a lot of things from the beautiful world of the internet.</p>
-        </section>
+          <p>Talking a little bit about my person, I've been in a digital environment all of my life due to I always had devices where I could learn a lot of things from the digital world so I can learn everything about and from the internet in the fastest way.</p>
+        </div>
+      </section>
 
-        <section id="general-info-about">
+      <section id="general-info-about">
+        <div id="general-info-photo">
+          <img src="./Material/photo-general-info.jpg" alt="">
+        </div>
+        <div id="general-info">
           <h2>Education</h2>
           <p>I've learned all about my knowledge in the programming world from platforms like Codecademy, Datacamp and freeCodeCamp, following their roadmap about what to learn, also I've dedicated my time to develop own projects to show my abilities in a better way.</p>
           <h2>Professional experience</h2>
           <p>I've not worked in a formal job until this moment, but I hope to be helpful for you with my experience earned thanks to the projects I've developed.</p>
-          <h2>Main Skills</h2>
-          <ul id="list-skills">
-            <li id="fullStack">
-              <h3>Full Stack Skills</h3>
-              <div id="full-skills" class="category-skills">
-                <div id="skill1-1" class="skill-container">
-                  <i class="fa-brands fa-html5"></i>
-                  <p>HTML</p>
-                </div>
-                <div id="skill1-2"  class="skill-container">
-                  <i class="fa-brands fa-css3-alt"></i>
-                  <p>CSS</p>
-                </div>
-                <div id="skill1-3"  class="skill-container">
-                  <i class="fa-brands fa-js"></i>
-                  <p>JavaScript</p>
-                </div>
-                <div id="skill1-4"  class="skill-container">
-                  <i class="fa-brands fa-angular"></i>
-                  <p>Angular</p>
-                </div>
-              </div>  
-            </li>
-            <li id="dataScientist">
-              <h3>Data Scientist Skills</h3>
-              <div id="data-skills" class="category-skills">
-                <div id="skill2-1"  class="skill-container">
-                  <i class="fa-solid fa-database"></i>
-                  <p>MySQL</p>
-                </div>
-                <div id="skill2-2"  class="skill-container">
-                  <i class="fa-brands fa-python"></i>
-                  <p>Python</p>
-                </div>
-              </div>  
-            </li>
-            <li id="versionControl">
-              <h3>Control Version Skills</h3>
-              <div id="control-skills" class="category-skills">
-                <div id="skill3-1" class="skill-container">
-                  <i class="fa-brands fa-git-alt"></i>
-                  <p>Git</p>
-                </div>
-                <div id="skill3-2" class="skill-container">
-                  <i class="fa-brands fa-github"></i>
-                  <p>GitHub</p>
-                </div>
-              </div>  
-            </li>
-          </ul>
-        </section>
+        </div>
+      </section>
 
-      </div>
+      <section id="about-skills">
+        <div id="skills-main-title">
+          <h2>Main Skills</h2>
+        </div>
+        <div id="display-skills">
+          <div id="skills-container">
+            <div id="skills-slider">
+              
+              
+              <div class="kinda-skill">
+                <div class="title-of-kinda">
+                  <h3>Full Stack Skills</h3>
+                </div>
+                <div id="full-skills" class="category-skills">
+                  <div id="skill1-1" class="skill-container">
+                    <i class="fa-brands fa-html5"></i>
+                    <p>HTML</p>
+                  </div>
+                  <div id="skill1-2"  class="skill-container">
+                    <i class="fa-brands fa-css3-alt"></i>
+                    <p>CSS</p>
+                  </div>
+                  <div id="skill1-3"  class="skill-container">
+                    <i class="fa-brands fa-js"></i>
+                    <p>JavaScript</p>
+                  </div>
+                  <div id="skill1-4"  class="skill-container">
+                    <i class="fa-brands fa-angular"></i>
+                    <p>Angular</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="kinda-skill">
+                <div class='title-of-kinda'>
+                  <h3>Data Scientist Skills</h3>
+                </div>
+                <div id="data-skills" class="category-skills">
+                  <div id="skill2-1"  class="skill-container">
+                    <i class="fa-solid fa-database"></i>
+                    <p>MySQL</p>
+                  </div>
+                  <div id="skill2-2"  class="skill-container">
+                    <i class="fa-brands fa-python"></i>
+                    <p>Python</p>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="kinda-skill">
+                <div class='title-of-kinda'>
+                  <h3>Control Version Skills</h3>
+                </div>
+                <div id="control-skills" class="category-skills">
+                  <div id="skill3-1" class="skill-container">
+                    <i class="fa-brands fa-git-alt"></i>
+                    <p>Git</p>
+                  </div>
+                  <div id="skill3-2" class="skill-container">
+                    <i class="fa-brands fa-github"></i>
+                    <p>GitHub</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <button id="about-first-button"></button>
+          <button id="about-second-button"></button>
+
+        </div>
+      </section>
+
     </div>
 
     <div id="contact-me">
@@ -312,5 +335,6 @@
   <script src="./JS-code/script-sidebar.js"></script>
   <script src="./JS-code/script.js"></script>
   <script src="./JS-code/script-carrousel.js"></script>
+  <script src="./JS-code/script-slider.js"></script>
 </body>
 </html>
