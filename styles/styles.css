@@ -540,6 +540,11 @@ main {
     background-position: center;
     background-repeat: no-repeat;
 }
+.contact-break {
+    border: 2px solid var(--third-color);
+    margin: 0;
+    margin: 30px 0 30px 0;
+}
 #contact-me-container {
     position: relative;
     grid-column: 1 / 2;
@@ -610,7 +615,85 @@ main {
     border: 0;
     background-color: var(--second-color);
 }
+#contact-email {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background-color: var(--complementary-color);
+}
+#contact-link-email {
+    width: 75%;
+    padding: 12px 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    overflow-x: scroll;
+    border: 2px solid var(--complementary-color);
+    background-color: var(--main-color);
+}
+#contact-link-email::-webkit-scrollbar {
+    display: none;
+}
 
+/* github button */
+.btn {
+    display: grid;
+    place-items: center;
+    background: #e3edf7;
+    padding: 1.4em;
+    border-radius: 10px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+            -6px -6px 10px -1px rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.btn:hover {
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+            inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+            -0.5px -0.5px 0px rgba(255,255,255,1),
+            0.5px 0.5px 0px rgba(0,0,0,0.15),
+            0px 12px 10px -10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.1);
+    transform: translateY(0.5em);
+}
+.btn svg {
+    transition: transform 0.5s;
+}
+.btn:hover svg {
+    transform: scale(0.9);
+    fill: #333333;
+}
+/* discord button */
+.btn {
+    display: grid;
+    place-items: center;
+    background: #e3edf7;
+    padding: 1.4em;
+    border-radius: 10px;
+    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+            -6px -6px 10px -1px rgba(255,255,255,0.7);
+    border: 1px solid rgba(0,0,0,0);
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+.btn:hover {
+    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
+            inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+            -0.5px -0.5px 0px rgba(255,255,255,1),
+            0.5px 0.5px 0px rgba(0,0,0,0.15),
+            0px 12px 10px -10px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.1);
+    transform: translateY(0.5em);
+}
+.btn svg {
+    transition: transform 0.5s;
+}
+.btn:hover svg {
+    transform: scale(0.9);
+    fill: #333333;
+}
+  
 
 /* @MEDIA FOR SMALLER SIZES !!!!!!!!!!!!!!!!!!!!!!!!! */
 
@@ -960,7 +1043,19 @@ main {
     }
     #button-header:hover {
         font-size: 20px;
-      }
+    }
+    .kinda-skill {
+        display: grid;
+        grid-template-columns: 35% 65%;
+        align-items: center;
+        padding: 25px 0 25px 15px;
+    }
+    #data-skills {
+        grid-template-columns: 42% 58%;
+    }
+    #control-skills {
+        grid-template-columns: 45% 55%;
+    }
 }
 @media only screen and (min-width: 830px) {
     #header-first-content {
@@ -992,14 +1087,19 @@ main {
     }
     #about-skills {
         display: grid;
-        grid-template-columns: 17% 83%;
-        padding: 15px 0;
+        grid-template-columns: 17% 81%;
+        padding: 35px 0;
+        gap: 2%;
+    }
+    #skills-main-title {
+        padding-left: 15px;
+    }
+    #skills-main-title h2 {
+        text-align: start;
     }
     .kinda-skill {
-        display: grid;
-        grid-template-columns: 35% 65%;
         align-items: center;
-        padding: 15px 0 15px 15px;
+        padding: 25px 0 25px 15px;
     }
     #data-skills {
         grid-template-columns: 42% 58%;
@@ -1028,7 +1128,12 @@ main {
     #image-header {
         grid-column: 6 / -1;
     }
-    
+    #about-skills {
+        padding: 40px 0;
+    }
+    #display-skills {
+        grid-template-columns: 6% 88% 6%;
+    }
 }
 @media only screen and (min-width: 910px) {
     #button-header {
@@ -1094,6 +1199,15 @@ main {
     #general-info p {
         font-size: 18px;
     }
+    .kinda-skill h3 {
+        font-size: 26px;
+    }
+    #data-skills {
+        grid-template-columns: 45% 55%;
+    }
+    #control-skills {
+        grid-template-columns: 46% 54%;
+    }
 }
 @media only screen and (min-width: 1024px) {
     #header-content {
@@ -1144,6 +1258,40 @@ main {
     }
     #general-info p {
         font-size: 19px;
+    }
+    #about-skills {
+        padding: 65px 0;
+    }
+    #skills-main-title h2 {
+        font-size: 56px;
+    }
+    #display-skills {
+        grid-template-columns: 5% 90% 5%;
+    }
+    .kinda-skill {
+        grid-template-columns: 32% 68%;
+        padding: 30px 0 30px 20px;
+    }
+    .kinda-skill h3 {
+        font-size: 28px;
+    }
+    #data-skills {
+        grid-template-columns: 42% 58%;
+    }
+    #control-skills {
+        grid-template-columns: 44% 56%;
+    }
+    .category-skills {
+        gap: 35px;
+    }
+    .skill-container {
+        gap: 10px;
+    }
+    .skill-container i {
+        font-size: 42px;
+    }
+    .skill-container p {
+        font-size: 20px;
     }
 }
 @media only screen and (min-width: 1090px) {
@@ -1236,6 +1384,22 @@ main {
     #general-info p {
         font-size: 21px;
     }
+    #skills-main-title h2 {
+        font-size: 64px;
+    }
+    .kinda-skill {
+        grid-template-columns: 34% 66%;
+        padding: 35px 0 35px 20px;
+    }
+    .kinda-skill h3 {
+        font-size: 32px;
+    }
+    .skill-container i {
+        font-size: 46px;
+    }
+    .skill-container p {
+        font-size: 22px;
+    }
 }
 @media only screen and (min-width: 1250px) {
     #header-content {
@@ -1283,6 +1447,19 @@ main {
     #general-info p {
         font-size: 22px;
     }
+    #skills-main-title {
+        padding-left: 25px;
+    }
+    #skills-main-title h2 {
+        font-size: 68px;
+    }
+    #display-skills {
+        padding-right: 5px;
+    }
+    .kinda-skill {
+        grid-template-columns: 34% 66%;
+        padding: 35px 0 35px 35px;
+    }
 }
 @media only screen and (min-width: 1325px) {
     #button-header {
@@ -1295,6 +1472,15 @@ main {
     }
     .cards-projects {
         grid-template-columns: 45% 55%;
+    }
+    .kinda-skill {
+        grid-template-columns: 32% 68%;
+    }
+    #data-skills {
+        grid-template-columns: 40% 60%;
+    }
+    #control-skills {
+        grid-template-columns: 42% 58%;
     }
 }
 @media only screen and (min-width: 1375px) {
@@ -1313,6 +1499,15 @@ main {
     }
     #general-info-about {
         grid-template-columns: 33% 64%;
+    }
+    .kinda-skill {
+        grid-template-columns: 30% 70%;
+    }
+    #data-skills {
+        grid-template-columns: 38% 62%;
+    }
+    #control-skills {
+        grid-template-columns: 40% 60%;
     }
 }
 @media only screen and (min-width: 1400px) {
@@ -1359,6 +1554,18 @@ main {
     #general-info-about {
         grid-template-columns: 27% 70%;
         padding: 45px 45px 50px 45px;
+    }
+    #skills-main-title {
+        padding-left: 35px;
+    }
+    .kinda-skill {
+        grid-template-columns: 27% 73%;
+    }
+    #data-skills {
+        grid-template-columns: 34% 66%;
+    }
+    #control-skills {
+        grid-template-columns: 36% 64%;
     }
 }
 
