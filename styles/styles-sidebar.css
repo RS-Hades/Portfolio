@@ -1,10 +1,5 @@
 :root {
   --white: #ffffff;
-  --yellow: #FFD000;
-  --red: #C00101;
-  --red-dark: #7c0000;
-  --blue-light: #171E5E;
-  --blue-dark: #000025;
   --size-of-the-lines: 8px;
 }
   /* rgb(11, 4, 12) rgba(255, 252, 72, 0.432)*/
@@ -13,12 +8,6 @@ body {
   font-family: 'Work Sans', sans-serif;
   overflow-x: hidden;
 }
-
-  .sidebar {
-    
-    transition: width 0.2s ease-in-out;
-  }
-
 
 nav {
   width: auto;
@@ -40,6 +29,10 @@ nav {
   background-color: rgba(255, 255, 255, 0.078);
   backdrop-filter: blur(10px);
 }
+.light-theme #navbar {
+  backdrop-filter: blur(15px);
+  background-color: rgba(89, 89, 89, 0.286);
+}
 .expanded #navbar {
   transform: translateX(0%);
 }
@@ -57,6 +50,7 @@ nav {
   background-color: rgba(255, 255, 255, 0.129);
   backdrop-filter: blur(15px);
 }
+/* Settings of the button !!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 .checkboxtoggler {
   width: 50px;
   display: flex;
@@ -64,50 +58,44 @@ nav {
   gap: 0.5em;
   cursor: pointer;
 }
-
 .line-1 {
   background: var(--white);
   height: var(--size-of-the-lines);
   border-radius: 10em;
   transition-duration: 500ms;
 }
-
 .line-2 {
   background: var(--white);
   height: var(--size-of-the-lines);
   border-radius: 10em;
   transition-duration: 500ms;
 }
-
 .line-3 {
   background: var(--white);
   height: var(--size-of-the-lines);
   border-radius: 10em;
   transition-duration: 500ms;
 }
-
 #toggleChecker {
   height: 3em;
   width: 100%;
   display: none;
 }
-
 #toggleChecker:checked + #togglerLable .checkboxtoggler .line-1 {
   -webkit-transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
   -ms-transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
   transform: rotate(45deg) translateY(0.7em) translateX(0.7em);
 }
-
 #toggleChecker:checked + #togglerLable .checkboxtoggler .line-2 {
   -webkit-transform: rotate(-45deg) translateY(0em) translateX(0.1em);
   -ms-transform: rotate(-45deg) translateY(0em) translateX(0.1em);
   transform: rotate(-45deg) translateY(0em) translateX(0.1em);
 }
-
 #toggleChecker:checked + #togglerLable .checkboxtoggler .line-3 {
   transform: scaleX(0);
   transform-origin: left;
 }
+/* !!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 
 #navbar-links {
   height: 100%;
@@ -120,17 +108,27 @@ nav {
   padding-left: 17px;
   padding-right: 17px;
   transition: 0.5s;
+  text-decoration: none;
 }
 #navbar-links a:hover {
   background-color: var(--white);
   cursor: pointer;
 }
+.expanded #navbar-links a:hover {
+  background-color: white;
+}
 #navbar-links a:hover span {
+  color: black;
+}
+.expanded #navbar-links a:hover span {
   color: black;
 }
 #navbar-links span {
   font-size: 19px;
   color: var(--white);
+}
+.light-theme #navbar-links span {
+  color: #12012d;
 }
 #dark-ligth {
   width: auto;
@@ -141,11 +139,6 @@ nav {
 #dark-ligth .theme-switch {
   --toggle-size: 9px;
 }
-
-
-
-
-
 
 /* @MEDIA FOR SMALLER SIZES!!!!!!!!!!!!!!!!!!! */
 @media only screen and (max-width: 610px) {
@@ -218,8 +211,6 @@ nav {
   }
 }
 
-
-
 /* @MEDIA FOR BIGGER SIZES !!!!!!!!!!!!!!!!!! */
 @media only screen and (min-width: 900px) {
   #navbar {
@@ -246,20 +237,7 @@ nav {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /* Dark/Light Button */
+/* Dark/Light Button */
 
   .theme-switch {
     --toggle-size: 8px;

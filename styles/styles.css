@@ -10,13 +10,13 @@ body {
     box-sizing: border-box;
 }
 :root {
-    --main-color: #170137;
+    --main-color: #12012d;
     --complementary-color: #F2E6D0;
     --carrousel-transform: 0%;
     --transition-carrousel: transform 0.5s;
     --second-color: #ffd91b;
-    --third-color: #4ed4bc;
-    --fourth-color: #4A1B8C;
+    --third-color: #d2b1e4;
+    --fourth-color: #3f1777;
     --sixth-color: #F235B0;
     --sub-color: #170137;
     --complementary-subcolor: #F2E6D0;
@@ -46,7 +46,7 @@ header {
     filter: blur(5px);
 }
 .light-theme #header-background-filter {
-    background: url(./../Material/background-light37.jpg);
+    background: url(./../Material/background-light-header.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -74,6 +74,12 @@ header {
     margin: 0;
     color: var(--second-color)
 }
+.light-theme #header-content h1 {
+    /* color: #F235B0; */
+    color: #3f1777
+    /* color: #ffd91b; */
+    /* color: #12012d; */
+}
 #header-content h2 {
     font-size: 20px;
     margin: 0;
@@ -96,7 +102,10 @@ header {
 #button-header {
     width: 45%;
     height: auto;
-    border: 3px solid var(--third-color);
+    border: 3px solid var(--sixth-color);
+    /* to see the color of the border of the button
+    also there is a property in the @media of 840px 
+    that set the color*/
     padding: 4px 0;
     border-radius: 45px;
     transition: all 0.3s;
@@ -108,10 +117,17 @@ header {
     margin-top: 20px;
 }
 #button-header:hover {
-    background: var(--third-color);
-    color: black;
+    background: var(--sixth-color);
+    color: white;
     font-size: 18px;
-  }
+}
+.light-theme #button-header {
+    border: 3px solid var(--second-color)
+}
+.light-theme #button-header:hover {
+    background-color: var(--second-color);
+    color: var(--complementary-color)
+}
 
 
 main {
@@ -126,6 +142,9 @@ main {
     padding: 80px 0px 100px 0;
     background-color: var(--main-color);
     /* background: linear-gradient(180deg, rgb(226, 173, 0) 20%, rgb(173, 145, 5) 80%); */
+}
+.light-theme #projects {
+    background-color: var(--third-color);
 }
 #projects h1 {
     font-size: 60px;
@@ -220,7 +239,9 @@ main {
 .link-projects-github {
     font-size: 28px;
     cursor: pointer;
+    color: black;
     transition: color 0.4s;
+    text-decoration: none;
 }
 .link-projects-github:hover {
     color: rgb(94, 4, 99);
@@ -322,7 +343,6 @@ main {
  width: 80%;
  height: 25%;
  font-size: 26px;
- border: 0;   
  font-weight: 600;
  grid-row: 1 / -1;
  z-index: 2;
@@ -332,10 +352,13 @@ main {
  justify-content: center;
  align-items: center;
  border: 1px solid white;
- color: rgb(207, 207, 207);
+ color: white;
  background-color: rgba(255, 255, 255, 0.151);
  position: relative;
  border-radius: 3px;
+}
+.light-theme .buttons-projects {
+    border: 1px solid var(--complementary-color);
 }
 .buttons-projects::before {
     content: "";
@@ -343,10 +366,13 @@ main {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(33,0,50,1) 20%, rgba(43,0,33,1) 80%);
+    background: linear-gradient(180deg, var(--sixth-color) 20%, var(--second-color) 80%);
     filter: blur(5px);
     transition: 0.3s;
     border-radius: 3px;
+}
+.light-theme .buttons-projects::before {
+    background: linear-gradient(180deg, var(--complementary-color) 20%, var(--fourth-color) 80%);
 }
 .buttons-projects:hover::before {
     filter: blur(0px);
@@ -404,6 +430,9 @@ main {
     padding: 45px 20px;
     background-color: var(--main-color);
 }
+.light-theme #general-info-about {
+    background-color: var(--sixth-color);
+}
 #general-info-photo {
     width: 100%;
     height: 100%;
@@ -426,6 +455,9 @@ main {
     background-color: var(--fourth-color);
     color: var(--complementary-color);
     border-radius: 15px;
+}
+.light-theme #general-info {
+    background-color: var(--main-color);
 }
 #general-info h2 {
     margin: 0;
@@ -506,44 +538,79 @@ main {
     margin: 0;
     font-size: 18px;
 }
-#display-skills button {
+.buttons-skills {
     width: 75%;
     height: 50%;
+    font-size: 24px;
+    font-weight: 600;
+    display: grid;
+    place-content: center;
+    background-color: rgba(255, 255, 255, 0.151);
     justify-self: center;
     align-self: center;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.buttons-skills {
+    border: 1px solid var(--complementary-color)
+}
+.buttons-skills i {
+    z-index: 3;
+    color: var(--complementary-color)
+}
+.expanded .buttons-skills i {
+    z-index: 1;
+}
+.buttons-skills::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, var(--sixth-color), var(--fourth-color));
+    filter: blur(5px);
+    transition: 0.3s;
+    border-radius: 3px;
+}
+.light-theme .buttons-skills::before {
+    background: linear-gradient(180deg, var(--sixth-color), var(--third-color));
+}
+.buttons-skills:hover::before {
+    filter: blur(0px);
 }
 #about-first-button {
     grid-column: 1 / 2;
     grid-row: 1 / -1;
-    background-color: salmon;
 }
 #about-second-button {
     grid-column: 3 / -1;
     grid-row: 1 / -1;
-    background-color: pink;
 }
 
 /* MAIN SECTION: CONTACT ME !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 #contact-me {
     width: 100%;
-    padding: 100px 15px 100px 15px;
+    padding: 100px 15px 100px 25px;
     display: grid;
-    grid-template-columns: 55% 45%;
+    grid-template-columns: 60% 40%;
     background-image: url(./../Material/background-dark-bottom.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .light-theme #contact-me {
-    background-image: url(./../Material/background-light36.jpg);
+    background-image: url(./../Material/background-light-bottom.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 .contact-break {
-    border: 2px solid var(--third-color);
+    border: 2px solid var(--fourth-color);
     margin: 0;
     margin: 30px 0 30px 0;
+}
+.light-theme .contact-break {
+    border: 2px solid var(--third-color)
 }
 #contact-me-container {
     position: relative;
@@ -554,25 +621,28 @@ main {
 #contact-inback {
     position: absolute;
     width: 103%;
-    height: 103%;
-    background-color: var(--third-color);
+    height: 102%;
+    background-color: var(--fourth-color);
     top: 50%;
     left: 50%;
     z-index: 0;
     transform: translate(-50%, -50%);
     border-radius: 15px;
 }
+.light-theme #contact-inback {
+    background-color: var(--third-color);
+}
 #contact-infront {
     background-color: var(--main-color);
     color: var(--complementary-color);
     position: relative;
-    padding: 15px;
+    padding: 20px 15px 35px 15px;
     border-radius: 15px;
-    z-index: 123;
+    z-index: 2;
 }
 .light-theme #contact-infront {
-    background-color: var(--complementary-color);
-    color: var(--main-color);
+    background-color: var(--main-color);
+    color: var(--complementary-color);
 }
 #contact-me h1 {
     font-size: 35px;
@@ -597,56 +667,107 @@ main {
     transition: 300ms;
     color: white;
 }
+.light-theme .contact-input {
+    color: var(--complementary-color)
+}
 .contact-input::placeholder {
     color: rgb(159, 159, 159);
 }
+.light-theme .contact-input::placeholder {
+    color: rgb(77, 77, 77)
+}
 .contact-input:focus {
-    border: 2px solid #39e1ff; 
+    border: 2px solid var(--second-color); 
     background-color: rgb(29, 29, 29);
     outline: none;
 }
+.light-theme .contact-input:focus {
+    border: 2px solid var(--sixth-color);
+    background-color: var(--complementary-color);
+    color: white;
+}
 #contact-me form button {
-    width: 30%;
+    width: 35%;
     font-size: 18px;
-    padding: 5px 10px;
+    padding: 5px 5px;
+    margin-top: 10px;
     display: grid;
+    align-self: center;
     place-items: center;
     border-radius: 10px;
     border: 0;
-    background-color: var(--second-color);
+    background-color: var(--fourth-color);
+    color: var(--complementary-color);
+    cursor: pointer
+}
+.light-theme #contact-me form button {
+    background-color: var(--sixth-color);
 }
 #contact-email {
-    width: 80%;
-    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 70% 30%;
     align-items: center;
     border-radius: 5px;
     background-color: var(--complementary-color);
 }
 #contact-link-email {
-    width: 75%;
+    height: auto;
     padding: 12px 10px;
     font-size: 18px;
-    border-radius: 5px;
+    border-radius: 5px 0px 0px 5px;
     overflow-x: scroll;
     border: 2px solid var(--complementary-color);
+    border-right: 0px;
     background-color: var(--main-color);
 }
 #contact-link-email::-webkit-scrollbar {
     display: none;
 }
+#copy-button {
+    display: grid;
+    place-content: center;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--main-color);
+    cursor: pointer;
+    height: 100%;
+    border-radius: 0px 5px 5px 0px;
+    background-color: var(--complementary-color);
+}
+#contact-socialmedia {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin: 35px 0 0px 0;
+}
+#container-button-media {
+    display: flex;
+    gap: 30px;
+}
+.media-button:first-child {
+    margin-right: -10px;
+}
 
-/* github button */
+
+/* github and discord buttons */
 .btn {
     display: grid;
     place-items: center;
-    background: #e3edf7;
-    padding: 1.4em;
+    background: var(--complementary-color);
+    padding: 4px;
     border-radius: 10px;
     box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
             -6px -6px 10px -1px rgba(255,255,255,0.7);
     border: 1px solid rgba(0,0,0,0);
     cursor: pointer;
     transition: transform 0.5s;
+    
+}
+.light-theme .btn {
+    background: var(--sixth-color)
 }
 .btn:hover {
     box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
@@ -659,41 +780,29 @@ main {
 }
 .btn svg {
     transition: transform 0.5s;
+    transform: scale(0.8);
+    fill: var(--fourth-color)
+}
+.light-theme .btn svg {
+    fill: var(--complementary-color)
 }
 .btn:hover svg {
-    transform: scale(0.9);
+    transform: scale(0.6);
     fill: #333333;
 }
-/* discord button */
-.btn {
+
+/* little setting for the footer */
+footer {
+    height: 120px;
+    background-color: var(--main-color);
+    font-size: 16px;
     display: grid;
-    place-items: center;
-    background: #e3edf7;
-    padding: 1.4em;
-    border-radius: 10px;
-    box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
-            -6px -6px 10px -1px rgba(255,255,255,0.7);
-    border: 1px solid rgba(0,0,0,0);
-    cursor: pointer;
-    transition: transform 0.5s;
+    place-content: center;
+    color: var(--complementary-color);
 }
-.btn:hover {
-    box-shadow: inset 4px 4px 6px -1px rgba(0,0,0,0.2),
-            inset -4px -4px 6px -1px rgba(255,255,255,0.7),
-            -0.5px -0.5px 0px rgba(255,255,255,1),
-            0.5px 0.5px 0px rgba(0,0,0,0.15),
-            0px 12px 10px -10px rgba(0,0,0,0.05);
-    border: 1px solid rgba(0,0,0,0.1);
-    transform: translateY(0.5em);
+.light-theme footer {
+    background-color: var(--second-color);
 }
-.btn svg {
-    transition: transform 0.5s;
-}
-.btn:hover svg {
-    transform: scale(0.9);
-    fill: #333333;
-}
-  
 
 /* @MEDIA FOR SMALLER SIZES !!!!!!!!!!!!!!!!!!!!!!!!! */
 
@@ -741,14 +850,40 @@ main {
     #about-skills {
         padding: 30px 2px 40px 2px;
     }
+    #contact-me {
+        padding: 100px 15px 100px 25px;
+        grid-template-columns: 60% 40%;
+    }
+    #contact-inback {
+        width: 103%;
+        height: 102%;
+    }
+    #contact-me form button {
+        width: 40%;
+        margin-top: 10px;
+    }
+    #contact-email {
+        width: 100%;
+    }
+    #contact-link-email {
+        padding: 8px 10px;
+        border: 1px solid var(--complementary-color);
+    }
+    #copy-button {
+        font-size: 16px;
+    }
+    footer {
+        font-size: 14px;
+    }
 }
 @media only screen and (max-width: 540px) {
+    #button-header {
+        width: 50%;
+    }
     #projects h1 {
         font-size: 50px;
         line-height: 50px;
     }
-
-
     #general-info-about {
         grid-template-columns: 1fr;
         grid-template-rows: 49% 48%;
@@ -773,6 +908,58 @@ main {
     }
     #general-info h2 {
         font-size: 28px;
+    }
+    .contact-break {
+        border: 1px solid var(--third-color);
+        margin: 0;
+        margin: 30px 0 20px 0;
+    }
+    #contact-inback {
+        width: 102%;
+        height: 101%;
+    }
+    #contact-me h1 {
+        font-size: 33px;
+    }
+    #contact-me h2 {
+        font-size: 22px;
+    }
+    #contact-me form button {
+        width: 40%;
+        font-size: 17px;
+        padding: 5px 5px;
+        margin-top: 10px;
+    }
+    #contact-link-email {
+        padding: 8px 6px;
+        font-size: 16px;
+    }
+    #copy-button {
+        font-size: 15px;
+    }
+    #contact-socialmedia {
+        flex-direction: column;
+        align-items: start;
+        gap: 15px;
+        margin: 0;
+    }
+    #container-button-media {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        gap: 30px;
+    }
+    .media-button:first-child {
+        margin-right: 0px;
+    }
+    .btn {
+        padding: 3px;
+    }
+    .btn svg {
+        transform: scale(0.7);
+    }
+    .btn:hover svg {
+        transform: scale(0.6);
     }
 }
 @media only screen and (max-width: 510px) {
@@ -810,10 +997,36 @@ main {
     #about-skills {
         padding: 35px 2px 45px 2px;
     }
+    #contact-me {
+        padding: 80px 15px 80px 25px;
+        grid-template-columns: 65% 35%;
+    }
+    #contact-me h1 {
+        font-size: 32px;
+    }
+    #contact-me h2 {
+        font-size: 21px;
+    }
+    #contact-link-email {
+        font-size: 15px;
+    }
+    #copy-button {
+        font-size: 14px;
+    }
+    .btn {
+        padding: 2px;
+    }
+    .btn svg {
+        transform: scale(0.6);
+    }
+    .btn:hover svg {
+        transform: scale(0.5);
+    }
 }
 @media only screen and (max-width: 460px) {
     #button-header {
         font-size: 14px;
+        width: 53%;
     }
     #who-is-info {
         grid-row: 1 / 10;
@@ -843,6 +1056,9 @@ main {
     .skill-container p {
         font-size: 16px;
     }
+    #contact-me {
+        grid-template-columns: 70% 30%;
+    }
 }
 @media only screen and (max-width: 420px) {
     #header-first-content {
@@ -857,6 +1073,7 @@ main {
     }
     #button-header {
         margin-top: 12px;
+        width: 50%;
     }
     #image-header {
         width: 80%;
@@ -909,6 +1126,32 @@ main {
     #about-skills {
         padding: 45px 2px 55px 2px;
     }
+    .contact-break {
+        margin: 0;
+        margin: 25px 0 20px 0;
+    }
+    #contact-me {
+        grid-template-columns: 75% 25%;
+    }
+    #contact-me h1 {
+        font-size: 30px;
+    }
+    #contact-me h2 {
+        font-size: 20px;
+    }
+    #contact-me form button {
+        font-size: 16px;
+        margin-top: 8px;
+    }
+    #contact-link-email {
+        font-size: 14px;
+    }
+    #copy-button {
+        font-size: 13px;
+    }
+    .btn {
+        padding: 1x;
+    }
 }
 @media only screen and (max-width: 400px) {
     .cards-projects {
@@ -945,6 +1188,10 @@ main {
             minmax(90px, 1fr)
         );
         gap: 15px 0px; 
+    }
+    footer {
+        font-size: 12px;
+    
     }
 }
 @media only screen and (max-width: 380px) {
@@ -1028,7 +1275,10 @@ main {
     }
     #button-header:hover {
         font-size: 19px;
-      }
+    }
+    #contact-me {
+        grid-template-columns: 57% 43%;
+    }
 }
 @media only screen and (min-width: 760px) {
     #body {
@@ -1055,6 +1305,16 @@ main {
     }
     #control-skills {
         grid-template-columns: 45% 55%;
+    }
+    #contact-me {
+        grid-template-columns: 55% 45%;
+    }
+    #contact-me h1 {
+        font-size: 38px;
+        margin: 0 0 15px 0;
+    }
+    footer {
+        height: 150px;
     }
 }
 @media only screen and (min-width: 830px) {
@@ -1110,12 +1370,50 @@ main {
     .skill-container {
         gap: 5px;
     }
+    #contact-me {
+        padding: 80px 15px 80px 25px;
+    }
+    #contact-inback {
+        width: 102%;
+        height: 101%;
+    }
+    #contact-me h1 {
+        font-size: 40px;
+    }
+    #contact-me h2 {
+        font-size: 26px;
+    }
+    .contact-input {
+        font-size: 14px;
+    }
+    #contact-me form button {
+        width: 30%;
+        font-size: 20px;
+        font-weight: 500;
+    }
+    #contact-link-email {
+        padding: 12px 10px;
+        font-size: 19px;
+        border: 2px solid var(--complementary-color);
+    }
+    #copy-button {
+        font-size: 20px;
+    }
+    #contact-socialmedia {
+        gap: 40px;
+    }
+    #container-button-media {
+        gap: 35px;
+    }
 }
 @media only screen and (min-width: 840px) {
     #button-header {
         width: 35%;
-        border: 4px solid var(--third-color);
+        border: 4px solid var(--sixth-color);
         font-size: 19px;
+    }
+    .light-theme #button-header {
+        border: 4px solid var(--second-color);
     }
     #button-header:hover {
         font-size: 21px;
@@ -1208,6 +1506,9 @@ main {
     #control-skills {
         grid-template-columns: 46% 54%;
     }
+    #contact-me {
+        grid-template-columns: 50% 50%;
+    }
 }
 @media only screen and (min-width: 1024px) {
     #header-content {
@@ -1293,6 +1594,9 @@ main {
     .skill-container p {
         font-size: 20px;
     }
+    #contact-me {
+        grid-template-columns: 45% 55%;
+    }
 }
 @media only screen and (min-width: 1090px) {
     .cards-projects {
@@ -1312,6 +1616,16 @@ main {
     }
     .technologie .tooltip-invert {
         top: 130%;
+    }
+    #contact-me {
+        padding: 80px 15px 80px 35px;
+    }
+    #contact-inback {
+        width: 101%;
+        height: 101%;
+    }
+    .contact-input {
+        font-size: 16px;
     }
 }
 @media only screen and (min-width: 1100px) {
@@ -1460,6 +1774,9 @@ main {
         grid-template-columns: 34% 66%;
         padding: 35px 0 35px 35px;
     }
+    #contact-me {
+        padding: 80px 15px 80px 45px;
+    }
 }
 @media only screen and (min-width: 1325px) {
     #button-header {
@@ -1529,6 +1846,9 @@ main {
     }
     #general-info-about {
         grid-template-columns: 29% 68%;
+    }
+    #contact-me {
+        padding: 80px 15px 80px 55px;
     }
 }
 @media only screen and (min-width: 1420px) {
