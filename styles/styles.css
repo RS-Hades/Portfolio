@@ -9,6 +9,9 @@ body {
 * {
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 :root {
     --main-color: #12012d;
     --complementary-color: #F2E6D0;
@@ -791,6 +794,35 @@ main {
     fill: #333333;
 }
 
+/* BACK TO TOP BUTTON !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1 */
+#back-top {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 9999999999999999999999;
+    padding: 2px 3px;
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    color: white;
+    display: grid;
+    place-content: center;
+    text-decoration: none;
+    animation: scroll-way auto linear;
+    animation-timeline: scroll(root);
+}
+#back-top span {
+    font-size: 55px;
+    font-weight: 900;
+    transition: 0.3s ease-in-out;
+}
+#back-top:hover {
+    cursor: pointer;
+}
+#back-top:hover span {
+    transform: translateY(-6px);
+}
+
 /* little setting for the footer */
 footer {
     height: 120px;
@@ -805,7 +837,11 @@ footer {
 }
 
 /* @MEDIA FOR SMALLER SIZES !!!!!!!!!!!!!!!!!!!!!!!!! */
-
+@media only screen and (max-width: 610px) {
+    #back-top {
+        display: none;
+    }
+}
 @media only screen and (max-width: 580px) {
     .cards-projects {
         grid-template-rows: 55% 45%;
@@ -1265,6 +1301,7 @@ footer {
         font-size: 14px;
     }
 }
+
 
 /* @MEDIA FOR BIGGER SIZES !!!!!!!!!!!!!!!!!!!!!!!!!!! */
 @media only screen and (min-width: 690px) {
@@ -1890,17 +1927,13 @@ footer {
 }
 
 /* @KEYFRAMES !!!!!!!!!!!!!!!*/
-@keyframes border {
+@keyframes scroll-way {
     0% {
-        background-color: #37cee9;
+        display: none;
+        opacity: 0;
     }
-    33% {
-        background-color: #C00101;
-    }
-    66% {
-        background-color: #FFD000;
-    }
-    100% {
-        background-color: #37cee9;
+    25% {
+        opacity: 1;
+        display: grid
     }
 }

@@ -63,18 +63,21 @@ nav {
   height: var(--size-of-the-lines);
   border-radius: 10em;
   transition-duration: 500ms;
+  z-index: 9999;
 }
 .line-2 {
   background: var(--white);
   height: var(--size-of-the-lines);
   border-radius: 10em;
   transition-duration: 500ms;
+  z-index: 9999;
 }
 .line-3 {
   background: var(--white);
   height: var(--size-of-the-lines);
   border-radius: 10em;
   transition-duration: 500ms;
+  z-index: 9999;
 }
 #toggleChecker {
   height: 3em;
